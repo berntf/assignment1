@@ -17,6 +17,7 @@ import negotiator.issue.IssueDiscrete;
 import negotiator.issue.IssueInteger;
 import negotiator.issue.IssueReal;
 import negotiator.issue.Value;
+import negotiator.issue.ValueDiscrete;
 import negotiator.issue.ValueInteger;
 import negotiator.issue.ValueReal;
 import negotiator.parties.AbstractNegotiationParty;
@@ -28,9 +29,57 @@ public class Group13 extends AbstractNegotiationParty {
 
     private double minUtility = 0.8;
     private double lastBid = 0;
+    
+    private ArrayList<Bid> allowedBids = null;
+    private Random rng = new Random();
 
     public void init() {
         minUtility = Math.max(minUtility, utilitySpace.getReservationValueUndiscounted());
+    }
+    
+    public void initBids() throws Exception {        
+        ArrayList<Issue> issues = utilitySpace.getDomain().getIssues();
+        
+        allowedBids = new ArrayList();
+        
+        for (HashMap<Integer,Value> values : getAllBids(issues, 0)) {
+            Bid bid = new Bid(utilitySpace.getDomain(), values);
+            if (getUtility(bid) >= minUtility) {
+                allowedBids.add(bid);
+            }
+        }
+         
+    }
+    
+    public static ArrayList<HashMap<Integer,Value>> getAllBids(ArrayList<Issue> issues, int from) throws Exception {        
+        Issue issue = issues.get(from);
+        
+        if (issue.getType() != ISSUETYPE.DISCRETE) {
+            throw new Exception("Issuetype " + issue.getType() + " not supported");
+        }
+        IssueDiscrete issueD = (IssueDiscrete)issue;
+        
+        
+        ArrayList<HashMap<Integer,Value>> bids;
+        
+        if (from == issues.size()-1) {
+            bids = new ArrayList();
+            bids.add(new HashMap());
+        } else {
+            bids = getAllBids(issues, from+1);
+        }
+        
+        ArrayList<HashMap<Integer,Value>> ret = new ArrayList();
+        
+        for (ValueDiscrete v : issueD.getValues()) {
+            for (HashMap<Integer,Value> bid : bids) {
+                HashMap<Integer,Value> newBid = new HashMap(bid);
+                newBid.put(issueD.getNumber(), v);
+                ret.add(newBid);
+            }
+        }
+        
+        return ret;
     }
 
     /**
@@ -78,7 +127,8 @@ public class Group13 extends AbstractNegotiationParty {
     }
 
     private Bid generateBid() throws Exception {
-        return utilitySpace.getMaxUtilityBid();
+        if (allowedBids == null) initBids();
+        return allowedBids.get(rng.nextInt(allowedBids.size()));
     }
 
     @Override
