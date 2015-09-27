@@ -26,7 +26,7 @@ import negotiator.parties.AbstractNegotiationParty;
  */
 public class Group13 extends AbstractNegotiationParty {
 
-    private double minUtility = 0.6;
+    private double minUtility = 0.8;
     private double lastBid = 0;
 
     public void init() {
