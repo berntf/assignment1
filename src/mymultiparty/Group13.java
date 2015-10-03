@@ -30,8 +30,10 @@ public class Group13 extends AbstractNegotiationParty {
 
     private double minUtility = 0.8;
     private double lastBid = 0;
+    double bestOpponent=0;
     private ArrayList<Offer> oldOffers = new ArrayList<Offer>();
     Bid OurLast;
+    HashMap<Integer,Double> bestSoFar = new HashMap<Integer,Double>();
     public void init() {
         minUtility = Math.max(minUtility, utilitySpace.getReservationValueUndiscounted());
     }
@@ -67,7 +69,6 @@ public class Group13 extends AbstractNegotiationParty {
      */
     public Bid generateLeastPainfullCompromise(Bid ourLast, Offer currentOther){
     	Bid best=currentOther.getBid();
-    	int index=0;
     	Iterator<Entry<Integer, Value>> it = currentOther.getBid().getValues().entrySet().iterator();
     	HashMap<Integer,Value> ours = ourLast.getValues();
     	while(it.hasNext()){
@@ -96,19 +97,21 @@ public class Group13 extends AbstractNegotiationParty {
     @Override
     public void receiveMessage(Object sender, Action action) {
         super.receiveMessage(sender, action);
-
+        
         if (action instanceof Offer) {
         	oldOffers.add((Offer)action);
+        	
             lastBid = getUtility(((Offer) action).getBid());
         }
     }
 
-    private boolean shouldAccept(double utility) {
-        return utility >= minUtility;
+    private boolean shouldAccept(double utility){
+        if(OurLast!=null&&(utility>=getUtility(OurLast))) return true;
+    	return utility >= minUtility;
     }
 
     private Bid generateBid() throws Exception {
-    	if(oldOffers.size()==0)
+    	if(oldOffers.size()==0||OurLast==null)
     		return OurLast=utilitySpace.getMaxUtilityBid();
     	return OurLast=generateLeastPainfullCompromise(OurLast,oldOffers.get(oldOffers.size()-1));
     }
