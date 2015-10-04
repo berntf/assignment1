@@ -1,0 +1,24 @@
+Starting negotiation session.
+Round 1
+  Turn 1: negotiator.parties.NegotiationPartyInternal@3b34c0a6 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Ballroom, Invitations: Custom, Printed, Music: DJ, Cleanup: Hired Help, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@453f0a8 (Offer: Bid[Food: Handmade Food, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Photo, Music: MP3, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@22dca7d0 (Accept)
+Round 2
+  Turn 1: negotiator.parties.NegotiationPartyInternal@3b34c0a6 (Offer: Bid[Food: Chips and Nuts, Drinks: Catering, Location: Party Tent, Invitations: Custom, Printed, Music: MP3, Cleanup: Special Equiment, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@453f0a8 (Offer: Bid[Food: Catering, Drinks: Beer Only, Location: Ballroom, Invitations: Custom, Handmade, Music: DJ, Cleanup: Water and Soap, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@22dca7d0 (Offer: Bid[Food: Chips and Nuts, Drinks: Catering, Location: Party Tent, Invitations: Plain, Music: MP3, Cleanup: Water and Soap, ])
+Round 3
+  Turn 1: negotiator.parties.NegotiationPartyInternal@3b34c0a6 (Offer: Bid[Food: Handmade Food, Drinks: Non-Alcoholic, Location: Party Tent, Invitations: Photo, Music: MP3, Cleanup: Special Equiment, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@453f0a8 (Offer: Bid[Food: Handmade Food, Drinks: Handmade Cocktails, Location: Party Tent, Invitations: Custom, Printed, Music: MP3, Cleanup: Hired Help, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@22dca7d0 (Accept)
+Deadline reached: Deadline:3rounds
+No agreement found.
+Finished negotiation session in 0.066s
+Time (s):		0.066317
+Rounds:		3
+Agreement?:		No
+Discounted?:		No
+Agent utility [RV]:	0.00000 (Party 1)
+Agent utility [RV]:	0.00000 (Party 2)
+Agent utility [RV]:	0.48000 (Party 3)
+
