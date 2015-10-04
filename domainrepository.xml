@@ -23,6 +23,7 @@
                 <profile url="file:etc/templates/partydomain/party8_utility.xml"/>
                 <profile url="file:etc/templates/partydomain/party9_utility.xml"/>
                 <profile url="file:etc/templates/partydomain/party_util1.xml"/>
+                <profile url="file:etc/templates/partydomain/party_util2.xml"/>
             </domainRepItem>
             <domainRepItem url="file:etc/templates/ANAC2015/group1-university/University.xml">
                 <profile url="file:etc/templates/ANAC2015/group1-university/University_util1.xml"/>
