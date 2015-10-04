@@ -12,17 +12,23 @@ import negotiator.issue.Value;
 import negotiator.issue.ValueInteger;
 
 public class FrequencyOpponentModel{
-    public ArrayList<HashMap<Value,Double>> values;
-    public ArrayList<Double> weights;
+    private int n;
+    
+    private ArrayList<HashMap<Value,Integer>> valueFreq;
+    private ArrayList<Double> weights;
+    
+    private Bid previousBid = null;
     
     
-    public FrequencyOpponentModel(Domain domain) {
+    public FrequencyOpponentModel(Domain domain, int n) {
+        this.n = n;
+        
         ArrayList<Issue> issues = domain.getIssues();
-        values = new ArrayList(issues.size());
+        valueFreq = new ArrayList(issues.size());
         weights = new ArrayList(issues.size());
         
         for (Issue issue : issues) {
-            HashMap<Value,Double> map;
+            HashMap<Value,Integer> map;
             int numValues;
             switch(issue.getType()) {
                 case DISCRETE :
@@ -30,7 +36,7 @@ public class FrequencyOpponentModel{
                     numValues = issueD.getNumberOfValues();
                     map = new HashMap(numValues);
                     for (Value v : issueD.getValues()) {
-                        map.put(v, 1.0/numValues);
+                        map.put(v, 0);
                     }
                     break;
                 case INTEGER :
@@ -39,15 +45,37 @@ public class FrequencyOpponentModel{
                     map = new HashMap(numValues);
                     for (int i = issueI.getLowerBound();i <= issueI.getUpperBound();i++) {
                         ValueInteger value = new ValueInteger(i);
-                        map.put(value, 1.0/numValues);
+                        map.put(value, 0);
                     }
                     break;
                 default : 
                     throw new RuntimeException("Issuetype " + issue.getType() + " is not recognized by FrequencyOpponontModel");
             }
             
-            values.add(map);
-            weights.add(1.0/issues.size());
+            valueFreq.add(issue.getNumber(), map);
+            weights.add(issue.getNumber(), 1.0/issues.size());
         }
+    }
+    
+    public void addBid(Bid b) throws Exception {
+        for (int i = 0; i < valueFreq.size();i++) {
+            HashMap<Value,Integer> freq = valueFreq.get(i);
+            Value v = b.getValue(i);
+            
+            freq.put(v, freq.get(v) + 1);
+        }
+        
+        if (previousBid != null) {
+            for (int i = 0; i < weights.size(); i++) {
+                if (b.getValue(i).equals(previousBid.getValue(i))) {
+                    weights.add(i, weights.get(i) + n);
+                }
+            }
+            normalizeWeights();
+        }
+    }
+    
+    private void normalizeWeights() {
+        
     }
 }
