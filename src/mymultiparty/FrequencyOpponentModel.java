@@ -1,10 +1,10 @@
 package mymultiparty;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import negotiator.Bid;
 import negotiator.Domain;
-import negotiator.boaframework.OpponentModel;
 import negotiator.issue.Issue;
 import negotiator.issue.IssueDiscrete;
 import negotiator.issue.IssueInteger;
@@ -12,20 +12,22 @@ import negotiator.issue.Value;
 import negotiator.issue.ValueInteger;
 
 public class FrequencyOpponentModel{
-    private int n;
+    private double n;
     
     private ArrayList<HashMap<Value,Integer>> valueFreq;
     private ArrayList<Double> weights;
+    private ArrayList<Integer> issueNumbers;
     
     private Bid previousBid = null;
     
     
-    public FrequencyOpponentModel(Domain domain, int n) {
+    public FrequencyOpponentModel(Domain domain, double n) {
         this.n = n;
         
         ArrayList<Issue> issues = domain.getIssues();
         valueFreq = new ArrayList(issues.size());
         weights = new ArrayList(issues.size());
+        issueNumbers = new ArrayList(issues.size());
         
         for (Issue issue : issues) {
             HashMap<Value,Integer> map;
@@ -52,30 +54,78 @@ public class FrequencyOpponentModel{
                     throw new RuntimeException("Issuetype " + issue.getType() + " is not recognized by FrequencyOpponontModel");
             }
             
-            valueFreq.add(issue.getNumber(), map);
-            weights.add(issue.getNumber(), 1.0/issues.size());
+            valueFreq.add(map);
+            weights.add(1.0/issues.size());
+            issueNumbers.add(issue.getNumber());
         }
+    }
+    
+    public double estimateUtility(Bid b) throws Exception {
+        double ret = 0;
+        
+        for (int i = 0;i < valueFreq.size();i++) {
+            HashMap<Value,Integer> freq = valueFreq.get(i);
+            Value v = b.getValue(issueNumbers.get(i));
+            double sum = getSum(freq.values());
+            
+            ret += weights.get(i) * freq.get(v)/sum;
+        }
+        
+        return ret;
+    }
+    
+    private <T extends Number> double getSum(Collection<T> c) {
+        double sum = 0;
+        for (T t : c) {
+            sum += t.doubleValue();
+        }
+        
+        return sum;
     }
     
     public void addBid(Bid b) throws Exception {
         for (int i = 0; i < valueFreq.size();i++) {
             HashMap<Value,Integer> freq = valueFreq.get(i);
-            Value v = b.getValue(i);
+            Value v = b.getValue(issueNumbers.get(i));
             
             freq.put(v, freq.get(v) + 1);
         }
         
         if (previousBid != null) {
             for (int i = 0; i < weights.size(); i++) {
-                if (b.getValue(i).equals(previousBid.getValue(i))) {
-                    weights.add(i, weights.get(i) + n);
+                if (b.getValue(issueNumbers.get(i)).equals(previousBid.getValue(issueNumbers.get(i)))) {
+                    weights.set(i, weights.get(i) + n);
                 }
             }
             normalizeWeights();
         }
+        
+        previousBid = b;
     }
     
     private void normalizeWeights() {
+        double sum = getSum(weights);
         
+        for (int i = 0;i < weights.size();i++) {
+            weights.set(i, weights.get(i)/sum);
+        }
+    }
+
+    @Override
+    public String toString() {
+        String ret = "";
+        
+        for (int i = 0;i < valueFreq.size();i++) {
+            ret += "Issue " + issueNumbers.get(i) + " (weight = " + weights.get(i) + " )" + ":\n";
+            
+            HashMap<Value,Integer> freq = valueFreq.get(i);
+            double sum = getSum(freq.values());
+            
+            for (Value v : freq.keySet()) {
+                ret += "   " + v.toString() + " : " + freq.get(v)/sum + "\n";
+            }
+        }
+        
+        return ret;
     }
 }

@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import negotiator.Bid;
 
 import negotiator.actions.Accept;
@@ -14,12 +12,8 @@ import negotiator.actions.Offer;
 import negotiator.issue.ISSUETYPE;
 import negotiator.issue.Issue;
 import negotiator.issue.IssueDiscrete;
-import negotiator.issue.IssueInteger;
-import negotiator.issue.IssueReal;
 import negotiator.issue.Value;
 import negotiator.issue.ValueDiscrete;
-import negotiator.issue.ValueInteger;
-import negotiator.issue.ValueReal;
 import negotiator.parties.AbstractNegotiationParty;
 
 /**
