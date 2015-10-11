@@ -11,16 +11,26 @@ import negotiator.issue.IssueInteger;
 import negotiator.issue.Value;
 import negotiator.issue.ValueInteger;
 
+/**
+ * Models an opponent using the frequency model
+ */
 public class FrequencyOpponentModel{
     private double n;
     
+    //valueFreq contains (per issue) the frequencies of all values
     private ArrayList<HashMap<Value,Integer>> valueFreq;
+    //weights contains the estimated weights
     private ArrayList<Double> weights;
+    //issueNumbers contains the issue number for each issue
     private ArrayList<Integer> issueNumbers;
     
     private Bid previousBid = null;
     
-    
+    /**
+     * Constructs a model for a single opponent.
+     * Domain can only contain Discrete or Integer issues, 
+     * but all the default domains only contain these types. 
+     */
     public FrequencyOpponentModel(Domain domain, double n) {
         this.n = n;
         
