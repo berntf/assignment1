@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 import negotiator.Bid;
-
+import negotiator.ContinuousTimeline;
 import negotiator.actions.Accept;
 import negotiator.actions.Action;
 import negotiator.actions.Offer;
@@ -19,17 +19,15 @@ import negotiator.parties.AbstractNegotiationParty;
 /**
  * This is your negotiation party.
  */
-public class Group13 extends AbstractNegotiationParty {
-
-    private double minUtility = 0.8;
+public class Group13_rev_conceder extends AbstractNegotiationParty {
+	
+	ContinuousTimeline timeLine;
+	private double minUtility = 0;
+	private double maxUtility = 0;
     private double lastBid = 0;
     
     private ArrayList<Bid> allowedBids = null;
     private Random rng = new Random();
-
-    public void init() {
-        minUtility = Math.max(minUtility, utilitySpace.getReservationValueUndiscounted());
-    }
     
     public void initBids() throws Exception {        
         ArrayList<Issue> issues = utilitySpace.getDomain().getIssues();
@@ -38,11 +36,10 @@ public class Group13 extends AbstractNegotiationParty {
         
         for (HashMap<Integer,Value> values : getAllBids(issues, 0)) {
             Bid bid = new Bid(utilitySpace.getDomain(), values);
-            if (getUtility(bid) >= minUtility) {
+            if (getUtility(bid) >= minUtility && getUtility(bid) <= maxUtility) {
                 allowedBids.add(bid);
             }
         }
-         
     }
     
     public static ArrayList<HashMap<Integer,Value>> getAllBids(ArrayList<Issue> issues, int from) throws Exception {        
@@ -121,13 +118,31 @@ public class Group13 extends AbstractNegotiationParty {
     }
 
     private Bid generateBid() throws Exception {
-        if (allowedBids == null) initBids();
+    	double theTime = timeline.getTime();    	
+    	System.out.println(theTime);
+    	
+        if (theTime < 0.5) {
+        	minUtility = utilitySpace.getReservationValueUndiscounted() -  0.1;
+        	maxUtility = utilitySpace.getReservationValueUndiscounted() + 0.1; 
+        	initBids();
+        }
+        else if (theTime > 0.5 && theTime < 0.95)
+        {
+        	minUtility = utilitySpace.getReservationValueUndiscounted() - 0.2;
+        	maxUtility = utilitySpace.getReservationValueUndiscounted() - 0.1;
+        	initBids();
+        }
+        else 
+        {
+        	maxUtility = utilitySpace.getReservationValueUndiscounted() + 0.3; 
+        	initBids();
+        }        
         return allowedBids.get(rng.nextInt(allowedBids.size()));
     }
 
     @Override
     public String getDescription() {
-        return "Negotiator Group 13 second";
+        return "Negotiator Group 13 rev conc";
     }
 
 }

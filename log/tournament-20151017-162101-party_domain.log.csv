@@ -1,0 +1,9 @@
+sep=;
+Run time (s);Round;Exception;deadline;Agreement;Discounted;#agreeing;min.util.;max.util.;Dist. to Pareto;Dist. to Nash;Dist. to Social Welfare;Agent 1;Agent 2;Agent 3;Agent 4;Utility 1;Utility 2;Utility 3;Utility 4;Profile 1;Profile 2;Profile 3;Profile 4
+140.152;4279;;180s;Yes;No;4;0.41090;0.83127;0.00000;0.89433;2.11598;ParsAgent@826875771;Mercury@593473933;Atlas3@1396641101;Group13_rev_conceder@962625149;0.8116666666666666;0.4108969606038105;0.8312699039479964;0.5;party1_utility.xml;party2_utility.xml;party_util1.xml;party_util2.xml
+142.621;4249;;180s;Yes;No;4;0.51368;0.78833;0.00000;0.39247;2.62518;ParsAgent@1249069224;Mercury@576397502;Group13_rev_conceder@2070708913;Atlas3@814952924;0.7883333333333333;0.5136752428857789;0.5955216883452603;0.7276522835137454;party1_utility.xml;party2_utility.xml;party_util1.xml;party_util2.xml
+;;failure while running session:java.util.concurrent.ExecutionException: Execution failed of Group13_rev_conceder@1828712915:java.lang.NullPointerException;;;;;;;;;;;;;;;;;;;;;
+;;failure while running session:Invalid action by negotiator.parties.NegotiationPartyInternal@1b7dfa29;;;;;;;;;;;;;;;;;;;;;
+;;failure while running session:Invalid action by negotiator.parties.NegotiationPartyInternal@1f28437;;;;;;;;;;;;;;;;;;;;;
+;;failure while running session:java.util.concurrent.ExecutionException: Execution failed of Group13_rev_conceder@273786887:java.lang.NullPointerException;;;;;;;;;;;;;;;;;;;;;
+125.145;4033;;180s;Yes;No;4;0.50000;0.92917;0.00000;0.88993;2.31356;ParsAgent@1549477308;Atlas3@1678412034;Group13_rev_conceder@2124516393;Mercury@536418482;0.9291666666666667;0.6497308213786102;0.6190921372729621;0.5;party1_utility.xml;party2_utility.xml;party_util1.xml;party_util2.xml

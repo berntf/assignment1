@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import negotiator.Bid;
 
 import negotiator.actions.Accept;
@@ -12,68 +14,23 @@ import negotiator.actions.Offer;
 import negotiator.issue.ISSUETYPE;
 import negotiator.issue.Issue;
 import negotiator.issue.IssueDiscrete;
+import negotiator.issue.IssueInteger;
+import negotiator.issue.IssueReal;
 import negotiator.issue.Value;
-import negotiator.issue.ValueDiscrete;
+import negotiator.issue.ValueInteger;
+import negotiator.issue.ValueReal;
 import negotiator.parties.AbstractNegotiationParty;
 
 /**
  * This is your negotiation party.
  */
-public class Group13 extends AbstractNegotiationParty {
+public class Group13_first extends AbstractNegotiationParty {
 
     private double minUtility = 0.8;
     private double lastBid = 0;
-    
-    private ArrayList<Bid> allowedBids = null;
-    private Random rng = new Random();
 
     public void init() {
         minUtility = Math.max(minUtility, utilitySpace.getReservationValueUndiscounted());
-    }
-    
-    public void initBids() throws Exception {        
-        ArrayList<Issue> issues = utilitySpace.getDomain().getIssues();
-        
-        allowedBids = new ArrayList();
-        
-        for (HashMap<Integer,Value> values : getAllBids(issues, 0)) {
-            Bid bid = new Bid(utilitySpace.getDomain(), values);
-            if (getUtility(bid) >= minUtility) {
-                allowedBids.add(bid);
-            }
-        }
-         
-    }
-    
-    public static ArrayList<HashMap<Integer,Value>> getAllBids(ArrayList<Issue> issues, int from) throws Exception {        
-        Issue issue = issues.get(from);
-        
-        if (issue.getType() != ISSUETYPE.DISCRETE) {
-            throw new Exception("Issuetype " + issue.getType() + " not supported");
-        }
-        IssueDiscrete issueD = (IssueDiscrete)issue;
-        
-        
-        ArrayList<HashMap<Integer,Value>> bids;
-        
-        if (from == issues.size()-1) {
-            bids = new ArrayList();
-            bids.add(new HashMap());
-        } else {
-            bids = getAllBids(issues, from+1);
-        }
-        
-        ArrayList<HashMap<Integer,Value>> ret = new ArrayList();
-        
-        for (ValueDiscrete v : issueD.getValues()) {
-            for (HashMap<Integer,Value> bid : bids) {
-                HashMap<Integer,Value> newBid = new HashMap(bid);
-                newBid.put(issueD.getNumber(), v);
-                ret.add(newBid);
-            }
-        }
-        
-        return ret;
     }
 
     /**
@@ -121,13 +78,12 @@ public class Group13 extends AbstractNegotiationParty {
     }
 
     private Bid generateBid() throws Exception {
-        if (allowedBids == null) initBids();
-        return allowedBids.get(rng.nextInt(allowedBids.size()));
+        return utilitySpace.getMaxUtilityBid();
     }
 
     @Override
     public String getDescription() {
-        return "Negotiator Group 13 second";
+        return "Negotiator Group 13 first";
     }
 
 }

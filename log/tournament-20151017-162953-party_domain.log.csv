@@ -1,0 +1,10 @@
+sep=;
+Run time (s);Round;Exception;deadline;Agreement;Discounted;#agreeing;min.util.;max.util.;Dist. to Pareto;Dist. to Nash;Dist. to Social Welfare;Agent 1;Agent 2;Agent 3;Agent 4;Utility 1;Utility 2;Utility 3;Utility 4;Profile 1;Profile 2;Profile 3;Profile 4
+144.895;4501;;180s;Yes;No;4;0.46425;0.86404;0.00000;0.87049;2.21054;ParsAgent@981823183;Mercury@221387686;Atlas3@873689224;Group13_rev_conceder@1282095523;0.8083333333333333;0.4642486756830665;0.8640395132544266;0.5;party1_utility.xml;party2_utility.xml;party_util1.xml;party_util2.xml
+144.555;4326;;180s;Yes;No;4;0.51368;0.78833;0.00000;0.39247;2.62518;ParsAgent@301791782;Mercury@58464003;Group13_rev_conceder@1389279859;Atlas3@1307690892;0.7883333333333333;0.5136752428857789;0.5955216883452603;0.7276522835137454;party1_utility.xml;party2_utility.xml;party_util1.xml;party_util2.xml
+;;failure while running session:java.util.concurrent.ExecutionException: Execution failed of Group13_rev_conceder@1752133321:java.lang.NullPointerException;;;;;;;;;;;;;;;;;;;;;
+;;failure while running session:Invalid action by negotiator.parties.NegotiationPartyInternal@76b63491;;;;;;;;;;;;;;;;;;;;;
+;;failure while running session:Invalid action by negotiator.parties.NegotiationPartyInternal@f5b7345;;;;;;;;;;;;;;;;;;;;;
+;;failure while running session:java.util.concurrent.ExecutionException: Execution failed of Group13_rev_conceder@1368169198:java.lang.NullPointerException;;;;;;;;;;;;;;;;;;;;;
+136.690;4388;;180s;Yes;No;4;0.50000;0.85649;0.00000;0.89006;2.49355;ParsAgent@1983678346;Atlas3@671649476;Group13_rev_conceder@1780437267;Mercury@772009171;0.8483333333333334;0.8564909885811369;0.6897071658124609;0.5;party1_utility.xml;party2_utility.xml;party_util1.xml;party_util2.xml
+136.600;4385;;180s;Yes;No;4;0.50000;0.85649;0.00000;0.89006;2.49355;ParsAgent@423814670;Atlas3@593417770;Mercury@2049107485;Group13_rev_conceder@368980534;0.8483333333333334;0.8564909885811369;0.6897071658124609;0.5;party1_utility.xml;party2_utility.xml;party_util1.xml;party_util2.xml
