@@ -25,7 +25,9 @@ public class USBNAT extends AbstractNegotiationParty {
     	
     	for (int i=1;i<points.length;i++){
     		if(points[i-1]<remaining&&points[i]>remaining){
-    			
+    			double subpercentage=(remaining-points[i-1])/(points[i]-points[i-1]);
+    			double stepsize=positions[i]-positions[i-1];
+    			return positions[i-1]+(subpercentage*stepsize);
     		}
     	}
     	return 1;
