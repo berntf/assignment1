@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 import negotiator.Bid;
-import negotiator.ContinuousTimeline;
 import negotiator.actions.Accept;
 import negotiator.actions.Action;
 import negotiator.actions.Offer;
@@ -21,7 +20,7 @@ import negotiator.parties.AbstractNegotiationParty;
  */
 public class Group13_rev_conceder extends AbstractNegotiationParty {
 	
-	ContinuousTimeline timeLine;
+	//ContinuousTimeline timeLine;
 	private double minUtility = 0;
 	private double maxUtility = 0;
     private double lastBid = 0;
@@ -118,11 +117,13 @@ public class Group13_rev_conceder extends AbstractNegotiationParty {
     }
 
     private Bid generateBid() throws Exception {
-    	double theTime = timeline.getTime();    	
+    	
+    	double theTime = timeline.getTime();
+    	
     	System.out.println(theTime);
     	
         if (theTime < 0.5) {
-        	minUtility = utilitySpace.getReservationValueUndiscounted() -  0.1;
+        	minUtility = utilitySpace.getReservationValueUndiscounted() + 0.2;
         	maxUtility = utilitySpace.getReservationValueUndiscounted() + 0.1; 
         	initBids();
         }
@@ -134,7 +135,8 @@ public class Group13_rev_conceder extends AbstractNegotiationParty {
         }
         else 
         {
-        	maxUtility = utilitySpace.getReservationValueUndiscounted() + 0.3; 
+        	minUtility = utilitySpace.getReservationValueUndiscounted() + 0.2;
+        	maxUtility = utilitySpace.getReservationValueUndiscounted() + 0.25; 
         	initBids();
         }        
         return allowedBids.get(rng.nextInt(allowedBids.size()));
