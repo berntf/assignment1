@@ -141,7 +141,8 @@ public class USBNAT extends AbstractNegotiationParty {
         	if(accaptable(hostileUtility,allbids.get(i))){
         		return allbids.get(i);
         	}
-    }
+        }
+        return allbids.get(0);
     }
 
     @Override
