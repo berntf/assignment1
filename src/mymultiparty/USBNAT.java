@@ -33,6 +33,13 @@ public class USBNAT extends AbstractNegotiationParty {
     Bid lastBid = null;
     double n = 0.1;
     ArrayList<Bid> allbids = null;
+    
+    private double absoluteMinimum = 1;
+    private double tries = 20;//Sinus periods
+    
+    public void init() {
+        absoluteMinimum = Math.max(0.2, utilitySpace.getReservationValueUndiscounted());
+    }
 
     private double getUtilityPerFraction(double remaining) {
         double[] points = {0, 0.2, 0.7, 1};
@@ -46,6 +53,13 @@ public class USBNAT extends AbstractNegotiationParty {
             }
         }
         return 1;
+    }
+    
+    private double getMinUtility(double t) {
+        double sin = Math.sin(tries*2*Math.PI * t + Math.PI);
+        double half = (1 - absoluteMinimum)/2 + absoluteMinimum;
+        double dist = 1 - half;
+        return 0.8*(1 - (1-absoluteMinimum)*t)+0.2*(half + dist*sin);
     }
 
     private ArrayList<Bid> generateAllBids() {
@@ -111,7 +125,7 @@ public class USBNAT extends AbstractNegotiationParty {
     public Action chooseAction(List<Class<? extends Action>> list) {
         try {
 
-            System.out.println(getUtilityPerFraction(getTimeLine().getTime()));
+            System.out.println(getMinUtility(getTimeLine().getTime()));
             System.out.println("-+-+-");
             lastBid = generateBid();
             return new Offer(lastBid);
@@ -126,7 +140,6 @@ public class USBNAT extends AbstractNegotiationParty {
         Set<Entry<Object, FrequencyOpponentModel>> models = opponents.entrySet();
         for (Entry e : models) {
             ArrayList<Bid> offers = accepts.get(e.getKey());
-            System.err.println(offers.size());
             if (!offers.isEmpty()) {
 
                 double hostileFriendlyness = getUtility(offers.get(offers.size() - 1));
@@ -167,7 +180,7 @@ public class USBNAT extends AbstractNegotiationParty {
     @Override
     public void receiveMessage(Object sender, Action action) {
         super.receiveMessage(sender, action);
-
+        
         if (!opponents.containsKey(sender)) {
             opponents.put(sender, new FrequencyOpponentModel(getUtilitySpace().getDomain(), n));
             accepts.put(sender, new ArrayList<Bid>());
