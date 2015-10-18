@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
+import negotiator.AgentID;
 import negotiator.Bid;
+import negotiator.Deadline;
 
 import negotiator.actions.Accept;
 import negotiator.actions.Action;
@@ -15,6 +17,8 @@ import negotiator.issue.IssueDiscrete;
 import negotiator.issue.Value;
 import negotiator.issue.ValueDiscrete;
 import negotiator.parties.AbstractNegotiationParty;
+import negotiator.session.TimeLineInfo;
+import negotiator.utility.UtilitySpace;
 
 /**
  * This is your negotiation party.
@@ -27,7 +31,10 @@ public class Group13 extends AbstractNegotiationParty {
     private ArrayList<Bid> allowedBids = null;
     private Random rng = new Random();
 
-    public void init() {
+    @Override
+    public void init(UtilitySpace utilSpace, Deadline dl, TimeLineInfo tl, long randomSeed, AgentID agentId) {
+        super.init(utilSpace, dl, tl, randomSeed, agentId);
+        
         minUtility = Math.max(minUtility, utilitySpace.getReservationValueUndiscounted());
     }
     

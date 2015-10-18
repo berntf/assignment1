@@ -9,9 +9,12 @@ import java.util.Set;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import static mymultiparty.Group13.getAllBids;
+import negotiator.AgentID;
 import negotiator.Bid;
+import negotiator.Deadline;
 import negotiator.actions.Accept;
 import negotiator.actions.Action;
 import negotiator.actions.Offer;
@@ -21,6 +24,8 @@ import negotiator.issue.IssueDiscrete;
 import negotiator.issue.Value;
 import negotiator.issue.ValueDiscrete;
 import negotiator.parties.AbstractNegotiationParty;
+import negotiator.session.TimeLineInfo;
+import negotiator.utility.UtilitySpace;
 
 //Idee: Houd een minimumutility bij, verlaag deze aan het begin snel en gooi hem aan het eind weer omhoog
 //Gebruik de geschiedenis van bids en accepts van de tegenstander om te kijken bij welke (eigen!) utilities zij zouden accepteren
@@ -33,11 +38,14 @@ public class USBNAT extends AbstractNegotiationParty {
     Bid lastBid = null;
     double n = 0.1;
     ArrayList<Bid> allbids = null;
-    
+
     private double absoluteMinimum = 1;
     private double tries = 20;//Sinus periods
-    
-    public void init() {
+
+    @Override
+    public void init(UtilitySpace utilSpace, Deadline dl, TimeLineInfo tl, long randomSeed, AgentID agentId) {
+        super.init(utilSpace, dl, tl, randomSeed, agentId);
+
         absoluteMinimum = Math.max(0.2, utilitySpace.getReservationValueUndiscounted());
     }
 
@@ -54,12 +62,115 @@ public class USBNAT extends AbstractNegotiationParty {
         }
         return 1;
     }
-    
+
     private double getMinUtility(double t) {
-        double sin = Math.sin(tries*2*Math.PI * t + Math.PI);
-        double half = (1 - absoluteMinimum)/2 + absoluteMinimum;
+        double sin = Math.sin(tries * 2 * Math.PI * t + 1.5 * Math.PI);
+        double half = (1 - absoluteMinimum) / 2 + absoluteMinimum;
         double dist = 1 - half;
-        return 0.8*(1 - (1-absoluteMinimum)*t)+0.2*(half + dist*sin);
+        return 0.8 * (1 - (1 - absoluteMinimum) * t) + 0.2 * (half + dist * sin);
+    }
+
+    private HashMap<Object, Double> getMinUtils() {
+        HashMap<Object, Double> ret = new HashMap(accepts.size());
+
+        for (Entry<Object, ArrayList<Bid>> entry : accepts.entrySet()) {
+            ArrayList<Bid> acc = entry.getValue();
+            FrequencyOpponentModel model = opponents.get(entry.getKey());
+            double min = 1;
+
+            for (Bid b : acc) {
+                double util = model.estimateUtility(b);
+                
+                if (util < min) {
+                    min = util;
+                }
+            }
+            
+            ret.put(entry.getKey(), min);
+        }
+        
+        return ret;
+    }
+
+    private boolean isAcceptable(Bid b, HashMap<Object,Double> minUtils) {
+        for (Entry<Object,Double> entry : minUtils.entrySet()) {
+            if (opponents.get(entry.getKey()).estimateUtility(b) < entry.getValue()) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    //Best Acceptable Bid
+    private Bid generateBAB(HashMap<Object,Double> minUtils, double myMin) {
+        Iterator<Bid> it = allbids.iterator();
+        
+        while (it.hasNext()) {
+            Bid b = it.next();
+            
+            if (myMin > getUtility(b)) {
+                return null;
+            }
+            
+            if (isAcceptable(b, minUtils)) {
+                return b;
+            }
+        }
+        
+        return null;
+    }
+    
+    //Max Bid over Minimum
+    private Bid generateMBM(double minUtility) {
+        double max = 0;
+        Bid bestBid = null;
+        
+        for (Bid b : allbids) {
+            if (getUtility(b) >= minUtility) {
+                double min = 1;
+                
+                for (FrequencyOpponentModel model : opponents.values()) {
+                    double util = model.estimateUtility(b);
+                    
+                    if (util < min) {
+                        min = util;
+                    }
+                }
+                
+                if (bestBid == null || max < min) {
+                    max = min;
+                    bestBid = b;
+                }
+            }
+        }
+        
+        return bestBid;
+    }
+
+    private Bid generateBidJ() {
+        if (allbids == null) {
+            allbids = generateAllBids();
+        }
+
+        HashMap<Object,Double> minUtils = getMinUtils();
+        double min = 1;
+        
+        for (Double util : minUtils.values()) {
+            if (util < min) {
+                min = util;
+            }
+        }
+        
+        double minUtility = Math.max(min, getMinUtility(getTimeLine().getTime()));
+        
+        Bid b = generateBAB(minUtils, minUtility);
+        
+        if (b != null) {
+            return b;
+        } else {
+            return generateMBM(minUtility);
+        }
     }
 
     private ArrayList<Bid> generateAllBids() {
@@ -124,14 +235,12 @@ public class USBNAT extends AbstractNegotiationParty {
     @Override
     public Action chooseAction(List<Class<? extends Action>> list) {
         try {
-
-            System.out.println(getMinUtility(getTimeLine().getTime()));
-            System.out.println("-+-+-");
-            Bid newBid = generateBid();
-            if(getUtility(newBid)>getUtility(lastBid))
-            	return new Offer(lastBid);
-            else
-            	return new Accept();
+            Bid newBid = generateBidJ();
+            if (getUtility(newBid) > getUtility(lastBid)) {
+                return new Offer(newBid);
+            } else {
+                return new Accept();
+            }
         } catch (Exception ex) {
             System.err.println("Exception in chooseAction: " + ex.getMessage());
             ex.printStackTrace();
@@ -183,7 +292,7 @@ public class USBNAT extends AbstractNegotiationParty {
     @Override
     public void receiveMessage(Object sender, Action action) {
         super.receiveMessage(sender, action);
-        
+
         if (!opponents.containsKey(sender)) {
             opponents.put(sender, new FrequencyOpponentModel(getUtilitySpace().getDomain(), n));
             accepts.put(sender, new ArrayList<Bid>());
@@ -197,7 +306,7 @@ public class USBNAT extends AbstractNegotiationParty {
             } catch (Exception ex) {
                 System.err.println("Exception in receiveMessage: " + ex.getMessage());
             }
-            
+
             accepts.get(sender).add(lastBid);
         } else if (action instanceof Accept) {
             accepts.get(sender).add(lastBid);
