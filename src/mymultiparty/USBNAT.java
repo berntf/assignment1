@@ -67,7 +67,7 @@ public class USBNAT extends AbstractNegotiationParty {
         double sin = Math.sin(tries * 2 * Math.PI * t + 1.5 * Math.PI);
         double half = (1 - absoluteMinimum) / 2 + absoluteMinimum;
         double dist = 1 - half;
-        return 0.8 * (1 - (1 - absoluteMinimum) * t) + 0.2 * (half + dist * sin);
+        return 0.7 * (1 - (1 - absoluteMinimum) * t) + 0.3 * (half + dist * sin);
     }
 
     private HashMap<Object, Double> getMinUtils() {
@@ -255,7 +255,13 @@ public class USBNAT extends AbstractNegotiationParty {
             if (!offers.isEmpty()) {
 
                 double hostileFriendlyness = getUtility(offers.get(offers.size() - 1));
+                
+                System.err.println("HF = " + hostileFriendlyness);
+                
                 double estimatedUtil = ((FrequencyOpponentModel) e.getValue()).estimateUtility(offer);
+                
+                System.err.println("EU = " + estimatedUtil);
+                
                 if (estimatedUtil < hostileFriendlyness) {
                     return false;
 

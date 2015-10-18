@@ -1,0 +1,412 @@
+Starting negotiation session.
+Round 1
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Developer, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 2
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 3
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 4
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 5
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 6
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 7
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 8
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 9
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 10
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 11
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 12
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 13
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 14
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 15
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 16
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 17
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 18
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: Engineer, Housing: Cave, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 19
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 20
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 21
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 22
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 23
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 24
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 25
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 26
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 27
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: Engineer, Housing: Cave, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 28
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Supermarket, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 29
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 30
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 31
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: None, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 32
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 33
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 34
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 35
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 36
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 37
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 38
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: 3ME, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 39
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 40
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 41
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: None, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 42
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 43
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Supermarket, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 44
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 45
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 46
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: Engineer, Housing: Cave, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 47
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 48
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 49
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 50
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 51
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 52
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: None, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 53
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Supermarket, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 54
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 55
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: None, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 56
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: None, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 57
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 58
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Supermarket, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 59
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: None, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Developer, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 60
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: None, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Developer, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 61
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Parents, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 62
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: Engineer, Housing: Parents, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 63
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: Engineer, Housing: Cave, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 64
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Developer, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 65
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 66
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Parents, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Manager, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 67
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: Engineer, Housing: Studio, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 68
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: Engineer, Housing: Parents, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 69
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: None, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 70
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: None, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Accept)
+Round 71
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Manager, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 72
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 73
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: Engineer, Housing: Cave, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Manager, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 74
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: EE, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Manager, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 75
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: EE, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 76
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TW, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 77
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: EE, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Accept)
+Round 78
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TI, Faculty: 3ME, Job Prospect: CEO, Housing: Parents, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Accept)
+Round 79
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Accept)
+Round 80
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: 3ME, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Manager, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 81
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: EE, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Accept)
+Round 82
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: 3ME, Job Prospect: CEO, Housing: Parents, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Manager, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 83
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: None, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Engineer, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 84
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: EWI, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 85
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 86
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TI, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 87
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Parents, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 88
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Engineer, Housing: Parents, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: EWI, Job Prospect: Jobless, Housing: Single Room, Partime Job: Supermarket, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 89
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TI, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Jobless, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 90
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TW, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Accept)
+Round 91
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: EE, Faculty: TPM, Job Prospect: CEO, Housing: Parents, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Developer, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 92
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TI, Faculty: TPM, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Developer, Housing: House, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 93
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: WB, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Supermarket, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Accept)
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 94
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: EE, Faculty: TPM, Job Prospect: CEO, Housing: Studio, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: Engineer, Housing: House, Partime Job: Supermarket, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 95
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: TBM, Faculty: 3ME, Job Prospect: Engineer, Housing: Single Room, Partime Job: None, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 96
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: 3ME, Job Prospect: CEO, Housing: Cave, Partime Job: Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: EWI, Job Prospect: Manager, Housing: Single Room, Partime Job: Supermarket, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 97
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: CEO, Housing: Single Room, Partime Job: Fastfood Restaurant, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: WB, Faculty: EWI, Job Prospect: Manager, Housing: Under the bridge, Partime Job: Catering, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: None, ])
+Round 98
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Offer: Bid[Study: TBM, Faculty: TPM, Job Prospect: Engineer, Housing: Cave, Partime Job: Catering, ])
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Offer: Bid[Study: EE, Faculty: 3ME, Job Prospect: Manager, Housing: Single Room, Partime Job: Supermarket, ])
+  Turn 3: negotiator.parties.NegotiationPartyInternal@12efc256 (Offer: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: Restaurant, ])
+Round 99
+  Turn 1: negotiator.parties.NegotiationPartyInternal@2dfb9cf1 (Accept)
+  Turn 2: negotiator.parties.NegotiationPartyInternal@61fca9cc (Accept)
+Found an agreement: Bid[Study: WB, Faculty: 3ME, Job Prospect: CEO, Housing: Single Room, Partime Job: Restaurant, ]
+Finished negotiation session in 4.639s
+Time (s):		4.639059299
+Rounds:		99
+Agreement?:		Yes
+Discounted?:		No
+Approval:		3
+Min. utility:		0.86258
+Max. utility:		1.00000
+Distance to pareto:	0.00000
+Distance to Nash:	0.00000
+Social welfare:		2.75013
+Agent utility:		0.86258 (Party 1)
+Agent utility:		0.88755 (Party 2)
+Agent utility:		1.00000 (Party 3)
+
