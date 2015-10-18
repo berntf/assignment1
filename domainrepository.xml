@@ -650,6 +650,7 @@
                 <profile url="file:etc/templates/Domain16/Domain16_util5.xml"/>
                 <profile url="file:etc/templates/Domain16/Domain16_util6.xml"/>
             </domainRepItem>
+            <domainRepItem url="file:etc/templates/RealDomain/RealDomain.xml"/>
         </domainRepItem>
         <protocolRepItem/>
         <multiPartyProtocolRepItem/>
