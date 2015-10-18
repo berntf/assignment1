@@ -131,7 +131,7 @@ public class USBNAT extends AbstractNegotiationParty {
     }
     public Bid generateBid(){
         double fractionRemaining=timeline.getTime();
-        double hostileUtility=getUtilityPerFraction(fractionRemaining);
+        double hostileUtility=getUtilityPerFraction(fractionRemaining)+Math.random()*0.05;
         for(int i=0;i<allbids.size();i++){
         	if(accaptable(hostileUtility,allbids.get(i))){
         		return allbids.get(i);
