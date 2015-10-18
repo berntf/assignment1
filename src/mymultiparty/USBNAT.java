@@ -30,6 +30,7 @@ public class USBNAT extends AbstractNegotiationParty {
 
     HashMap<Object, FrequencyOpponentModel> opponents = new HashMap<>();
     HashMap<Object, ArrayList<Bid>> accepts = new HashMap<>();
+    Bid lastBid = null;
     double n = 0.1;
     ArrayList<Bid> allbids = null;
 
@@ -115,7 +116,8 @@ public class USBNAT extends AbstractNegotiationParty {
 
             System.out.println(getUtilityPerFraction(getTimeLine().getTime()));
             System.out.println("-+-+-");
-            return new Offer(generateBid());
+            lastBid = generateBid();
+            return new Offer(lastBid);
         } catch (Exception ex) {
             System.err.println("Exception in chooseAction: " + ex.getMessage());
             return new Accept();
@@ -131,16 +133,17 @@ public class USBNAT extends AbstractNegotiationParty {
         }
         return true;
     }
+
     public Bid generateBid() {
         if (allbids == null) {
             allbids = generateAllBids();
         }
-        double fractionRemaining=timeline.getTime();
-        double hostileUtility=getUtilityPerFraction(fractionRemaining)+Math.random()*0.05;
-        for(int i=0;i<allbids.size();i++){
-        	if(accaptable(hostileUtility,allbids.get(i))){
-        		return allbids.get(i);
-        	}
+        double fractionRemaining = timeline.getTime();
+        double hostileUtility = getUtilityPerFraction(fractionRemaining) + Math.random() * 0.05;
+        for (int i = 0; i < allbids.size(); i++) {
+            if (accaptable(hostileUtility, allbids.get(i))) {
+                return allbids.get(i);
+            }
         }
         return allbids.get(0);
     }
@@ -151,15 +154,21 @@ public class USBNAT extends AbstractNegotiationParty {
 
         if (!opponents.containsKey(sender)) {
             opponents.put(sender, new FrequencyOpponentModel(getUtilitySpace().getDomain(), n));
+            accepts.put(sender, new ArrayList<Bid>());
         }
 
         if (action instanceof Offer) {
+            lastBid = ((Offer) action).getBid();
             FrequencyOpponentModel OM = opponents.get(sender);
             try {
-                OM.addBid(((Offer) action).getBid());
+                OM.addBid(lastBid);
             } catch (Exception ex) {
                 System.err.println("Exception in receiveMessage: " + ex.getMessage());
             }
+
+            accepts.get(sender).add(lastBid);
+        } else if (action instanceof Accept) {
+            accepts.get(sender).add(lastBid);
         }
     }
 
