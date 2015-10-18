@@ -16,7 +16,20 @@ public class USBNAT extends AbstractNegotiationParty {
     
     HashMap<Object,FrequencyOpponentModel> opponents = new HashMap<>();
     double n = 0.1;
-
+    
+    
+    
+    private double getUtilityPerFraction(double remaining){
+    	double[] points ={0,0.2,0.7,1};
+    	double[] positions ={1,0.4,0.3,0.7};
+    	
+    	for (int i=1;i<points.length;i++){
+    		if(points[i-1]<remaining&&points[i]>remaining){
+    			
+    		}
+    	}
+    	return 1;
+    }
     @Override
     public Action chooseAction(List<Class<? extends Action>> list) {
         try {

@@ -12,6 +12,7 @@ public class ComputeNeuron extends Neuron{
 	AcctiVationFunction activationFunction;
 	public ComputeNeuron mate(ComputeNeuron mate){
 		ComputeNeuron ret = new ComputeNeuron();
+		return ret;
 		
 	}
 	
@@ -26,7 +27,7 @@ public class ComputeNeuron extends Neuron{
 		for (int i=0;i <weights.size();i++){
 			try{
 				value=value+weights.get(i)*connections.get(i).getValue();
-			}catch (NeuronalLoopException){
+			}catch (NeuronalLoopException e){
 				weights.remove(i);
 				connections.remove(i);
 			}
