@@ -114,7 +114,7 @@ public class USBNAT extends AbstractNegotiationParty {
             System.out.println(getUtilityPerFraction(getTimeLine().getTime()));
             System.out.println("-+-+-");
             
-            return new Offer(getUtilitySpace().getMaxUtilityBid());
+            return new Offer(generateBid());
         } catch (Exception ex) {
             System.err.println("Exception in chooseAction: " + ex.getMessage());
             return new Accept();
