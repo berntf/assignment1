@@ -93,6 +93,9 @@
             <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="example party group 13" classPath="/Users/Bernt/Documents/Study/TU Delft - MSc - MKE/IN4010 - Artificial Intelligence/Assignment/1/java/bin/mymultiparty/Group13.class" partyName="Group13">
                 <properties/>
             </partyRepItem>
+            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBNAT" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBNAT.class" partyName="USBNAT">
+                <properties/>
+            </partyRepItem>
         </partyRepItems>
         <domainRepItem/>
         <protocolRepItem/>
