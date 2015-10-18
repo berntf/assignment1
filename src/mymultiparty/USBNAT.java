@@ -83,11 +83,6 @@ public class USBNAT extends AbstractNegotiationParty {
     public static ArrayList<HashMap<Integer, Value>> getAllBids(ArrayList<Issue> issues, int from) {
         Issue issue = issues.get(from);
 
-        if (issue.getType() != ISSUETYPE.DISCRETE) {
-            throw new RuntimeException("Issuetype " + issue.getType() + " not supported");
-        }
-        IssueDiscrete issueD = (IssueDiscrete) issue;
-
         ArrayList<HashMap<Integer, Value>> bids;
 
         if (from == issues.size() - 1) {
@@ -96,13 +91,15 @@ public class USBNAT extends AbstractNegotiationParty {
         } else {
             bids = getAllBids(issues, from + 1);
         }
-
+        
+        ArrayList<Value> values = Util.getValues(issue);
+        
         ArrayList<HashMap<Integer, Value>> ret = new ArrayList();
 
-        for (ValueDiscrete v : issueD.getValues()) {
+        for (Value v : values) {
             for (HashMap<Integer, Value> bid : bids) {
                 HashMap<Integer, Value> newBid = new HashMap(bid);
-                newBid.put(issueD.getNumber(), v);
+                newBid.put(issue.getNumber(), v);
                 ret.add(newBid);
             }
         }
