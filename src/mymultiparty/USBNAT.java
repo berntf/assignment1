@@ -91,9 +91,9 @@ public class USBNAT extends AbstractNegotiationParty {
         } else {
             bids = getAllBids(issues, from + 1);
         }
-        
+
         ArrayList<Value> values = Util.getValues(issue);
-        
+
         ArrayList<HashMap<Integer, Value>> ret = new ArrayList();
 
         for (Value v : values) {
@@ -117,22 +117,29 @@ public class USBNAT extends AbstractNegotiationParty {
             return new Offer(lastBid);
         } catch (Exception ex) {
             System.err.println("Exception in chooseAction: " + ex.getMessage());
+            ex.printStackTrace();
             return new Accept();
         }
     }
 
-    boolean accaptable(Bid offer){
+    boolean accaptable(Bid offer) {
         Set<Entry<Object, FrequencyOpponentModel>> models = opponents.entrySet();
         for (Entry e : models) {
-        	ArrayList<Bid> offers=accepts.get(e.getKey());
-        	double hostileFriendlyness=getUtility(offers.get(offers.size()));
-        	double estimatedUtil=((FrequencyOpponentModel) e.getValue()).estimateUtility(offer);
-        	if (estimatedUtil < hostileFriendlyness) {
-                return false;
+            ArrayList<Bid> offers = accepts.get(e.getKey());
+            System.err.println(offers.size());
+            if (!offers.isEmpty()) {
+
+                double hostileFriendlyness = getUtility(offers.get(offers.size() - 1));
+                double estimatedUtil = ((FrequencyOpponentModel) e.getValue()).estimateUtility(offer);
+                if (estimatedUtil < hostileFriendlyness) {
+                    return false;
+
+                }
             }
         }
         return true;
     }
+
     boolean accaptable(double minimal, Bid offer) {
         Set<Entry<Object, FrequencyOpponentModel>> models = opponents.entrySet();
         for (Entry e : models) {
