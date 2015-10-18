@@ -3,6 +3,7 @@ package mymultiparty;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+
 import negotiator.Bid;
 import negotiator.Domain;
 import negotiator.issue.Issue;
@@ -70,12 +71,17 @@ public class FrequencyOpponentModel{
         }
     }
     
-    public double estimateUtility(Bid b) throws Exception {
+    public double estimateUtility(Bid b){
         double ret = 0;
         
         for (int i = 0;i < valueFreq.size();i++) {
             HashMap<Value,Integer> freq = valueFreq.get(i);
-            Value v = b.getValue(issueNumbers.get(i));
+            Value v=null;
+			try {
+				v = b.getValue(issueNumbers.get(i));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
             double sum = getSum(freq.values());
             
             ret += weights.get(i) * freq.get(v)/sum;

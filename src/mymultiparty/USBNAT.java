@@ -1,7 +1,12 @@
 package mymultiparty;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import negotiator.Bid;
 import negotiator.actions.Accept;
 import negotiator.actions.Action;
 import negotiator.actions.Offer;
@@ -16,12 +21,12 @@ public class USBNAT extends AbstractNegotiationParty {
     
     HashMap<Object,FrequencyOpponentModel> opponents = new HashMap<>();
     double n = 0.1;
-    
+    ArrayList<Bid> allbids;
     
     
     private double getUtilityPerFraction(double remaining){
     	double[] points ={0,0.2,0.7,1};
-    	double[] positions ={1,0.4,0.3,0.7};
+    	double[] positions ={0,0.6,0.7,0.3};
     	
     	for (int i=1;i<points.length;i++){
     		if(points[i-1]<remaining&&points[i]>remaining){
@@ -41,7 +46,25 @@ public class USBNAT extends AbstractNegotiationParty {
             return new Accept();
         }
     }
-    
+    boolean accaptable(double minimal,Bid offer){
+    	Set<Entry <Object,FrequencyOpponentModel>> models=opponents.entrySet();
+    	for(Entry e : models){
+    		if(((FrequencyOpponentModel)e.getValue()).estimateUtility(offer)<minimal){
+    			return false;
+    		}
+    	}
+    	return true;
+    }
+    public Bid generateBid(){
+        double fractionRemaining=timeline.getTime();
+        double hostileUtility=getUtilityPerFraction(fractionRemaining);
+        for(int i=0;i<allbids.size();i++){
+        	if(accaptable(hostileUtility,allbids.get(i))){
+        		return allbids.get(i);
+        	}
+        }
+		return allbids.get(0);
+    }
     @Override
     public void receiveMessage(Object sender, Action action) {
         super.receiveMessage(sender, action);
