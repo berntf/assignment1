@@ -124,6 +124,18 @@ public class USBNAT extends AbstractNegotiationParty {
         }
     }
 
+    boolean accaptable(Bid offer){
+        Set<Entry<Object, FrequencyOpponentModel>> models = opponents.entrySet();
+        for (Entry e : models) {
+        	ArrayList<Bid> offers=accepts.get(e.getKey());
+        	double hostileFriendlyness=getUtility(offers.get(offers.size()));
+        	double estimatedUtil=((FrequencyOpponentModel) e.getValue()).estimateUtility(offer);
+        	if (estimatedUtil < hostileFriendlyness) {
+                return false;
+            }
+        }
+        return true;
+    }
     boolean accaptable(double minimal, Bid offer) {
         Set<Entry<Object, FrequencyOpponentModel>> models = opponents.entrySet();
         for (Entry e : models) {
@@ -141,7 +153,7 @@ public class USBNAT extends AbstractNegotiationParty {
         double fractionRemaining = timeline.getTime();
         double hostileUtility = getUtilityPerFraction(fractionRemaining) + Math.random() * 0.05;
         for (int i = 0; i < allbids.size(); i++) {
-            if (accaptable(hostileUtility, allbids.get(i))) {
+            if (accaptable(allbids.get(i))) {
                 return allbids.get(i);
             }
         }
