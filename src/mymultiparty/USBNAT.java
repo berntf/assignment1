@@ -1,30 +1,21 @@
 package mymultiparty;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import static mymultiparty.Group13.getAllBids;
 import negotiator.AgentID;
 import negotiator.Bid;
 import negotiator.Deadline;
 import negotiator.actions.Accept;
 import negotiator.actions.Action;
 import negotiator.actions.Offer;
-import negotiator.issue.ISSUETYPE;
 import negotiator.issue.Issue;
-import negotiator.issue.IssueDiscrete;
 import negotiator.issue.Value;
-import negotiator.issue.ValueDiscrete;
 import negotiator.parties.AbstractNegotiationParty;
 import negotiator.session.TimeLineInfo;
 import negotiator.utility.UtilitySpace;

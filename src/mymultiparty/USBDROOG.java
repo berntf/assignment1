@@ -251,7 +251,12 @@ public class USBDROOG extends AbstractNegotiationParty {
     boolean accaptable(Bid offer) {
         Set<Map.Entry<Object, FrequencyOpponentModel>> models = opponents.entrySet();
         for (Map.Entry e : models) {
-            ArrayList<Bid> offers = accepts.get(e.getKey());
+            double fractionRemaining = timeline.getTime();
+            double offset=1;
+            if(fractionRemaining>0.5){
+            	offset=0.9;
+            }
+        	ArrayList<Bid> offers = accepts.get(e.getKey());
             if (!offers.isEmpty()) {
 
                 double hostileFriendlyness = getUtility(offers.get(offers.size() - 1));
@@ -262,7 +267,7 @@ public class USBDROOG extends AbstractNegotiationParty {
                 
                 System.err.println("EU = " + estimatedUtil);
                 
-                if (estimatedUtil < hostileFriendlyness) {
+                if (estimatedUtil/offset < hostileFriendlyness) {
                     return false;
 
                 }
@@ -285,8 +290,6 @@ public class USBDROOG extends AbstractNegotiationParty {
         if (allbids == null) {
             allbids = generateAllBids();
         }
-        double fractionRemaining = timeline.getTime();
-        double hostileUtility = getUtilityPerFraction(fractionRemaining) + Math.random() * 0.05;
         for (int i = 0; i < allbids.size(); i++) {
             if (accaptable(allbids.get(i))) {
                 return allbids.get(i);
