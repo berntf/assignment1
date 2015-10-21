@@ -148,6 +148,23 @@ public class USBNAT extends AbstractNegotiationParty {
         return bestBid;
     }
 
+    public Bid getNash(){
+    	double nash=-1;
+    	Bid ret=null;
+    	for(Bid option: allbids){
+    		double nashv=getUtility(option);
+    	    for (Entry<Object,FrequencyOpponentModel> entry : opponents.entrySet()) {
+    	    	nashv=nashv*entry.getValue().estimateUtility(option);
+    	    }
+    	    if(nashv>nash){
+    	    	nash=nashv;
+    	    	ret=option;
+    	    }
+    		
+    	}
+    	return ret;
+    }
+
     private Bid generateBidJ() {
         if (allbids == null) {
             allbids = generateAllBids();
