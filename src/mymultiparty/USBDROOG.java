@@ -8,6 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Map.Entry;
+
 import negotiator.AgentID;
 import negotiator.Bid;
 import negotiator.Deadline;
@@ -173,6 +175,24 @@ public class USBDROOG extends AbstractNegotiationParty {
         }
     }
 
+    public Bid getNash(){
+    	double nash=-1;
+    	Bid ret=null;
+    	for(Bid option: allbids){
+    		double nashv=getUtility(option);
+    	    for (Entry<Object,FrequencyOpponentModel> entry : opponents.entrySet()) {
+    	    	nashv=nashv*entry.getValue().estimateUtility(option);
+    	    }
+    	    if(nashv>nash){
+    	    	nash=nashv;
+    	    	ret=option;
+    	    }
+    		
+    	}
+    	return ret;
+    }
+
+    
     private ArrayList<Bid> generateAllBids() {
         ArrayList<Issue> issues = utilitySpace.getDomain().getIssues();
 
@@ -237,7 +257,7 @@ public class USBDROOG extends AbstractNegotiationParty {
         try {            
             Bid newBid = generateBid();
             double fractionRemaining = timeline.getTime();
-            if(fractionRemaining>0.998){
+            if(fractionRemaining>0.994){
             	return new Accept();
             }
             if (getUtility(newBid) > getUtility(lastBid)) {
@@ -291,13 +311,17 @@ public class USBDROOG extends AbstractNegotiationParty {
     int bidnum=0;
     public Bid generateBid() {
     	bidnum++;
-    	
+        double fractionRemaining = timeline.getTime();
+        if(fractionRemaining<0.97){
+        	return getNash();
+        }
     	if (allbids == null) {
             allbids = generateAllBids();
         }
     	if(bidnum<20){
     		return allbids.get(0);
     	}
+    	
         for (int i = 0; i < allbids.size(); i++) {
             if (accaptable(allbids.get(i))) {
                 return allbids.get(i);
