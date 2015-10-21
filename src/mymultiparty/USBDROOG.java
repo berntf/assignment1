@@ -261,11 +261,9 @@ public class USBDROOG extends AbstractNegotiationParty {
 
                 double hostileFriendlyness = getUtility(offers.get(offers.size() - 1));
                 
-                System.err.println("HF = " + hostileFriendlyness);
                 
                 double estimatedUtil = ((FrequencyOpponentModel) e.getValue()).estimateUtility(offer);
                 
-                System.err.println("EU = " + estimatedUtil);
                 
                 if (estimatedUtil/offset < hostileFriendlyness) {
                     return false;
