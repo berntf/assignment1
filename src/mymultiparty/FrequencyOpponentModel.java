@@ -3,6 +3,8 @@ package mymultiparty;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import negotiator.Bid;
 import negotiator.Domain;
@@ -20,7 +22,7 @@ public class FrequencyOpponentModel {
     private double n;
 
     //valueFreq contains (per issue) the frequencies of all values
-    private ArrayList<HashMap<Value, Integer>> valueFreq;
+    private ArrayList<IssueModel> issueModels;
     //weights contains the estimated weights
     private ArrayList<Double> weights;
     //issueNumbers contains the issue number for each issue
@@ -37,20 +39,22 @@ public class FrequencyOpponentModel {
         this.n = n;
 
         ArrayList<Issue> issues = domain.getIssues();
-        valueFreq = new ArrayList(issues.size());
+        issueModels = new ArrayList(issues.size());
         weights = new ArrayList(issues.size());
         issueNumbers = new ArrayList(issues.size());
 
         for (Issue issue : issues) {
-            ArrayList<Value> values = Util.getValues(issue);
-
-            HashMap<Value, Integer> map = new HashMap(values.size());
-
-            for (Value v : values) {
-                map.put(v, 0);
-            }
-
-            valueFreq.add(map);
+            switch(issue.getType()) {
+                case DISCRETE :
+                    issueModels.add(new DiscreteIssueModel((IssueDiscrete)issue));
+                    break;
+                case INTEGER :
+                    issueModels.add(new IntegerIssueModel((IssueInteger)issue));
+                    break;
+                default :
+                    throw new RuntimeException("Unknown Issue Type: " + issue.getType());
+            }            
+            
             weights.add(1.0 / issues.size());
             issueNumbers.add(issue.getNumber());
         }
@@ -59,37 +63,21 @@ public class FrequencyOpponentModel {
     public double estimateUtility(Bid b) {
         double ret = 0;
 
-        for (int i = 0; i < valueFreq.size(); i++) {
-            HashMap<Value, Integer> freq = valueFreq.get(i);
-            Value v = null;
+        for (int i = 0; i < issueModels.size(); i++) {
             try {
-                v = b.getValue(issueNumbers.get(i));
-            } catch (Exception e) {
-                e.printStackTrace();
+                ret += weights.get(i) * issueModels.get(i).estimateUtility(b.getValue(issueNumbers.get(i)));
+            } catch (Exception ex) {
+                System.err.println("Exception while estimating utility: " + ex.getMessage());
             }
-            double sum = getSum(freq.values());
-
-            ret += weights.get(i) * freq.get(v) / sum;
         }
 
         return ret;
     }
 
-    private <T extends Number> double getSum(Collection<T> c) {
-        double sum = 0;
-        for (T t : c) {
-            sum += t.doubleValue();
-        }
-
-        return sum;
-    }
-
     public void addBid(Bid b) throws Exception {
-        for (int i = 0; i < valueFreq.size(); i++) {
-            HashMap<Value, Integer> freq = valueFreq.get(i);
+        for (int i = 0; i < issueModels.size(); i++) {
             Value v = b.getValue(issueNumbers.get(i));
-
-            freq.put(v, freq.get(v) + 1);
+            issueModels.get(i).addBid(v);
         }
 
         if (previousBid != null) {
@@ -105,26 +93,26 @@ public class FrequencyOpponentModel {
     }
 
     private void normalizeWeights() {
-        double sum = getSum(weights);
+        double sum = Util.getSum(weights);
 
         for (int i = 0; i < weights.size(); i++) {
             weights.set(i, weights.get(i) / sum);
         }
     }
 
+    public Bid getPreviousBid() {
+        return previousBid;
+    }
+    
+    
     @Override
     public String toString() {
         String ret = "";
 
-        for (int i = 0; i < valueFreq.size(); i++) {
+        for (int i = 0; i < issueModels.size(); i++) {
             ret += "Issue " + issueNumbers.get(i) + " (weight = " + weights.get(i) + " )" + ":\n";
 
-            HashMap<Value, Integer> freq = valueFreq.get(i);
-            double sum = getSum(freq.values());
-
-            for (Value v : freq.keySet()) {
-                ret += "   " + v.toString() + " : " + freq.get(v) / sum + "\n";
-            }
+            ret += issueModels.get(i).toString();
         }
 
         return ret;

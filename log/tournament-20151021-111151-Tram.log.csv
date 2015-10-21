@@ -1,0 +1,8 @@
+sep=;
+Run time (s);Round;Exception;deadline;Agreement;Discounted;#agreeing;min.util.;max.util.;Dist. to Pareto;Dist. to Nash;Dist. to Social Welfare;Agent 1;Agent 2;Utility 1;Utility 2;Profile 1;Profile 2
+2.320;1001;;1000rounds;No;No;1;0.50000;0.50000;1.17509;1.22655;0.00000;USBNAT@77292218;USBDROOG@612158997;0.5;0.5;Tram_Profile1.xml;Tram_Profile3.xml
+1.373;1001;;1000rounds;No;No;1;0.50000;0.50000;1.17509;1.22655;0.00000;USBDROOG@1220360668;USBNAT@578347239;0.5;0.5;Tram_Profile1.xml;Tram_Profile3.xml
+1.757;1001;;1000rounds;No;No;1;0.50000;0.50000;1.17509;1.22655;0.00000;USBNAT@823328318;USBDROOG@2136069288;0.5;0.5;Tram_Profile1.xml;Tram_Profile3.xml
+1.122;1001;;1000rounds;No;No;1;0.50000;0.50000;1.17509;1.22655;0.00000;USBDROOG@738091550;USBNAT@960314909;0.5;0.5;Tram_Profile1.xml;Tram_Profile3.xml
+2.067;1001;;1000rounds;No;No;1;0.50000;0.50000;1.17509;1.22655;0.00000;USBNAT@1626514000;USBDROOG@53112155;0.5;0.5;Tram_Profile1.xml;Tram_Profile3.xml
+0.967;1001;;1000rounds;No;No;1;0.50000;0.50000;1.17509;1.22655;0.00000;USBDROOG@1723116463;USBNAT@439549209;0.5;0.5;Tram_Profile1.xml;Tram_Profile3.xml

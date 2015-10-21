@@ -11,6 +11,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static mymultiparty.Group13.getAllBids;
 import negotiator.AgentID;
 import negotiator.Bid;
@@ -40,7 +42,11 @@ public class USBNAT extends AbstractNegotiationParty {
     ArrayList<Bid> allbids = null;
 
     private double absoluteMinimum = 1;
-    private double tries = 20;//Sinus periods
+    private final double tries = 20;//Sinus periods
+    private final double momentum = 0.05;
+    private final double start = 0.7;
+    
+    private boolean even = true;
 
     @Override
     public void init(UtilitySpace utilSpace, Deadline dl, TimeLineInfo tl, long randomSeed, AgentID agentId) {
@@ -152,6 +158,13 @@ public class USBNAT extends AbstractNegotiationParty {
         if (allbids == null) {
             allbids = generateAllBids();
         }
+        
+        double time = getTimeLine().getTime();
+        even = !even;
+        
+        if (time < start || even) {
+            return allbids.get(0);
+        }
 
         HashMap<Object,Double> minUtils = getMinUtils();
         double min = 1;
@@ -162,7 +175,7 @@ public class USBNAT extends AbstractNegotiationParty {
             }
         }
         
-        double minUtility = Math.max(min, getMinUtility(getTimeLine().getTime()));
+        double minUtility = Math.max(min-momentum, getMinUtility((time - start)/(1 - start)));
         
         Bid b = generateBAB(minUtils, minUtility);
         
@@ -234,7 +247,7 @@ public class USBNAT extends AbstractNegotiationParty {
 
     @Override
     public Action chooseAction(List<Class<? extends Action>> list) {
-        try {
+        try {            
             Bid newBid = generateBidJ();
             if (getUtility(newBid) > getUtility(lastBid)) {
                 return new Offer(newBid);
@@ -298,9 +311,13 @@ public class USBNAT extends AbstractNegotiationParty {
     @Override
     public void receiveMessage(Object sender, Action action) {
         super.receiveMessage(sender, action);
+        
+        if ("Protocol".equals(sender)) {
+            return;
+        }
 
         if (!opponents.containsKey(sender)) {
-            opponents.put(sender, new FrequencyOpponentModel(getUtilitySpace().getDomain(), n));
+            opponents.put(sender, new BetterFOM(getUtilitySpace().getDomain(), n));
             accepts.put(sender, new ArrayList<Bid>());
         }
 

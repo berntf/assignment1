@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<multilateralTournamentsConfiguration>
+    <tournaments>
+        <tournament>
+            <deadline>
+                <value>1000</value>
+                <type>ROUND</type>
+                <DEFAULT_TIME_OUT>180</DEFAULT_TIME_OUT>
+            </deadline>
+            <protocolItem hasMediatorProfile="false" hasMediator="false" description="Each agents makes offer, counter-offer, or accepts" classPath="negotiator.protocol.StackedAlternatingOffersProtocol" protocolName="Stacked Alternating Offers Protocol for Multi-Lateral Negotiation (SAOPMN)"/>
+            <partyRepItems>
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBNAT" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBNAT.class" partyName="USBNAT">
+                    <properties/>
+                </item>
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBDROOG" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBDROOG.class" partyName="USBDROOG">
+                    <properties/>
+                </item>
+            </partyRepItems>
+            <partyProfileItems>
+                <item url="file:etc/templates/ANAC2015/group6-tram/Tram_Profile1.xml"/>
+                <item url="file:etc/templates/ANAC2015/group6-tram/Tram_Profile3.xml"/>
+            </partyProfileItems>
+            <numSessions>3</numSessions>
+            <numberOfAgentsPerSession>2</numberOfAgentsPerSession>
+            <repetitionAllowed>false</repetitionAllowed>
+        </tournament>
+    </tournaments>
+</multilateralTournamentsConfiguration>
