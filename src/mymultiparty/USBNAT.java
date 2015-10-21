@@ -11,9 +11,13 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+<<<<<<< Updated upstream
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static mymultiparty.Group13.getAllBids;
+=======
+import static mymultiparty.Group13_second.getAllBids;
+>>>>>>> Stashed changes
 import negotiator.AgentID;
 import negotiator.Bid;
 import negotiator.Deadline;
