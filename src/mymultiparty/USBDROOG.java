@@ -240,7 +240,7 @@ public class USBDROOG extends AbstractNegotiationParty {
             if(fractionRemaining>0.998){
             	return new Accept();
             }
-            if (getUtility(newBid) >= getUtility(lastBid)) {
+            if (getUtility(newBid) > getUtility(lastBid)) {
             	lastBid=newBid;
                 return new Offer(newBid);
             } else {
