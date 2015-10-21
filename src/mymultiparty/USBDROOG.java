@@ -283,11 +283,16 @@ public class USBDROOG extends AbstractNegotiationParty {
         }
         return true;
     }
-
+    int bidnum=0;
     public Bid generateBid() {
-        if (allbids == null) {
+    	bidnum++;
+    	
+    	if (allbids == null) {
             allbids = generateAllBids();
         }
+    	if(bidnum<20){
+    		return allbids.get(0);
+    	}
         for (int i = 0; i < allbids.size(); i++) {
             if (accaptable(allbids.get(i))) {
                 return allbids.get(i);
