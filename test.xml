@@ -3,45 +3,31 @@
     <tournaments>
         <tournament>
             <deadline>
-<<<<<<< HEAD
-                <value>180</value>
+                <value>20</value>
                 <type>TIME</type>
-=======
-                <value>1000</value>
-                <type>ROUND</type>
-
->>>>>>> 65e6b2e58750e6a5dab9e460bf79ef770a8c39eb
                 <DEFAULT_TIME_OUT>180</DEFAULT_TIME_OUT>
             </deadline>
             <protocolItem hasMediatorProfile="false" hasMediator="false" description="Each agents makes offer, counter-offer, or accepts" classPath="negotiator.protocol.StackedAlternatingOffersProtocol" protocolName="Stacked Alternating Offers Protocol for Multi-Lateral Negotiation (SAOPMN)"/>
             <partyRepItems>
-<<<<<<< HEAD
                 <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="3. ParsAgent" classPath="agents.anac.y2015.ParsAgent.ParsAgent" partyName="ANAC2015-3-ParsAgent">
                     <properties/>
                 </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="12. Kawaii" classPath="agents.anac.y2015.fairy.kawaii" partyName="ANAC2015-12-Kawaii">
-=======
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Random party1" classPath="negotiator.parties.RandomCounterOfferNegotiationParty" partyName="Random party1">
-                    <properties/>
-                </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="Random party2" classPath="negotiator.parties.RandomCounterOfferNegotiationParty" partyName="Random party2">
-                    <properties/>
-                </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="example party group 13" classPath="/Users/Bernt/Documents/Study/TU Delft - MSc - MKE/IN4010 - Artificial Intelligence/Assignment/1/java/bin/mymultiparty/Group13.class" partyName="Group13">
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBNAT" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBNAT.class" partyName="USBNAT">
->>>>>>> 65e6b2e58750e6a5dab9e460bf79ef770a8c39eb
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="5. Mercury " classPath="agents.anac.y2015.Mercury.Mercury" partyName="ANAC2015-5-Mercury">
                     <properties/>
                 </item>
                 <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBNAT" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBNAT.class" partyName="USBNAT">
+                    <properties/>
+                </item>
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBDROOG" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBDROOG.class" partyName="USBDROOG">
                     <properties/>
                 </item>
             </partyRepItems>
             <partyProfileItems>
-                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile1.xml"/>
-                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile3.xml"/>
-                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile7.xml"/>
+                <item url="file:etc/templates/partydomain/party2_utility.xml"/>
+                <item url="file:etc/templates/partydomain/party3_utility.xml"/>
+                <item url="file:etc/templates/partydomain/party4_utility.xml"/>
             </partyProfileItems>
-            <numSessions>2</numSessions>
+            <numSessions>1</numSessions>
             <numberOfAgentsPerSession>3</numberOfAgentsPerSession>
             <repetitionAllowed>false</repetitionAllowed>
         </tournament>
