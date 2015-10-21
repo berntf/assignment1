@@ -3,8 +3,9 @@
     <tournaments>
         <tournament>
             <deadline>
-                <value>180</value>
-                <type>TIME</type>
+                <value>1000</value>
+                <type>ROUND</type>
+
                 <DEFAULT_TIME_OUT>180</DEFAULT_TIME_OUT>
             </deadline>
             <protocolItem hasMediatorProfile="false" hasMediator="false" description="Each agents makes offer, counter-offer, or accepts" classPath="negotiator.protocol.StackedAlternatingOffersProtocol" protocolName="Stacked Alternating Offers Protocol for Multi-Lateral Negotiation (SAOPMN)"/>
@@ -16,16 +17,19 @@
                     <properties/>
                 </item>
                 <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="example party group 13" classPath="/Users/Bernt/Documents/Study/TU Delft - MSc - MKE/IN4010 - Artificial Intelligence/Assignment/1/java/bin/mymultiparty/Group13.class" partyName="Group13">
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBNAT" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBNAT.class" partyName="USBNAT">
+                    <properties/>
+                </item>
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBDROOG" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBDROOG.class" partyName="USBDROOG">
                     <properties/>
                 </item>
             </partyRepItems>
             <partyProfileItems>
-                <item url="file:etc/templates/partydomain/party1_utility.xml"/>
-                <item url="file:etc/templates/partydomain/party2_utility.xml"/>
-                <item url="file:etc/templates/partydomain/party3_utility.xml"/>
+                <item url="file:etc/templates/ANAC2015/group6-tram/Tram_Profile1.xml"/>
+                <item url="file:etc/templates/ANAC2015/group6-tram/Tram_Profile3.xml"/>
             </partyProfileItems>
-            <numSessions>1</numSessions>
-            <numberOfAgentsPerSession>3</numberOfAgentsPerSession>
+            <numSessions>3</numSessions>
+            <numberOfAgentsPerSession>2</numberOfAgentsPerSession>
             <repetitionAllowed>false</repetitionAllowed>
         </tournament>
     </tournaments>

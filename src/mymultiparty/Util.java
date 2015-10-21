@@ -1,6 +1,7 @@
 package mymultiparty;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import negotiator.issue.Issue;
 import negotiator.issue.IssueDiscrete;
@@ -31,5 +32,26 @@ public class Util {
             }
         
         return ret;
+    }
+    
+    public static <T extends Number> double getSum(Collection<T> c) {
+        double sum = 0;
+        for (T t : c) {
+            sum += t.doubleValue();
+        }
+
+        return sum;
+    }
+    
+    public static <T extends Comparable> T getMaximum(Collection<T> c) {
+        T max = null;
+        
+        for (T t : c) {
+            if (max == null || t.compareTo(max) > 0) {
+                max = t;
+            }
+        }
+        
+        return max;
     }
 }
