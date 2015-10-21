@@ -236,7 +236,10 @@ public class USBDROOG extends AbstractNegotiationParty {
     public Action chooseAction(List<Class<? extends Action>> list) {
         try {            
             Bid newBid = generateBid();
-            
+            double fractionRemaining = timeline.getTime();
+            if(fractionRemaining>0.998){
+            	return new Accept();
+            }
             if (getUtility(newBid) >= getUtility(lastBid)) {
             	lastBid=newBid;
                 return new Offer(newBid);
