@@ -165,6 +165,7 @@ public class USBNAT extends AbstractNegotiationParty {
     	return ret;
     }
 
+    
     private Bid generateBidJ() {
         if (allbids == null) {
             allbids = generateAllBids();
@@ -296,6 +297,10 @@ public class USBNAT extends AbstractNegotiationParty {
             }
         }
         return true;
+    }
+    
+    public boolean secondToLastTurn(){
+    	return timeline.getCurrentTime()>0.996;
     }
 
     public Bid generateBid() {
