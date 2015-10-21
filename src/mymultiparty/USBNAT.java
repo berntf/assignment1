@@ -55,20 +55,6 @@ public class USBNAT extends AbstractNegotiationParty {
         absoluteMinimum = Math.max(0.2, utilitySpace.getReservationValueUndiscounted());
     }
 
-    private double getUtilityPerFraction(double remaining) {
-        double[] points = {0, 0.2, 0.7, 1};
-        double[] positions = {0, 0.6, 0.7, 0.3};
-
-        for (int i = 1; i < points.length; i++) {
-            if (points[i - 1] < remaining && points[i] > remaining) {
-                double subpercentage = (remaining - points[i - 1]) / (points[i] - points[i - 1]);
-                double stepsize = positions[i] - positions[i - 1];
-                return positions[i - 1] + (subpercentage * stepsize);
-            }
-        }
-        return 1;
-    }
-
     private double getMinUtility(double t) {
         double sin = Math.sin(tries * 2 * Math.PI * t + 1.5 * Math.PI);
         double half = (1 - absoluteMinimum) / 2 + absoluteMinimum;
@@ -153,24 +139,6 @@ public class USBNAT extends AbstractNegotiationParty {
         
         return bestBid;
     }
-
-    public Bid getNash(){
-    	double nash=-1;
-    	Bid ret=null;
-    	for(Bid option: allbids){
-    		double nashv=getUtility(option);
-    	    for (Entry<Object,FrequencyOpponentModel> entry : opponents.entrySet()) {
-    	    	nashv=nashv*entry.getValue().estimateUtility(option);
-    	    }
-    	    if(nashv>nash){
-    	    	nash=nashv;
-    	    	ret=option;
-    	    }
-    		
-    	}
-    	return ret;
-    }
-
     
     private Bid generateBidJ() {
         if (allbids == null) {
@@ -277,57 +245,6 @@ public class USBNAT extends AbstractNegotiationParty {
             ex.printStackTrace();
             return new Accept();
         }
-    }
-
-    boolean accaptable(Bid offer) {
-        Set<Entry<Object, FrequencyOpponentModel>> models = opponents.entrySet();
-        for (Entry e : models) {
-            ArrayList<Bid> offers = accepts.get(e.getKey());
-            if (!offers.isEmpty()) {
-
-                double hostileFriendlyness = getUtility(offers.get(offers.size() - 1));
-                
-                System.err.println("HF = " + hostileFriendlyness);
-                
-                double estimatedUtil = ((FrequencyOpponentModel) e.getValue()).estimateUtility(offer);
-                
-                System.err.println("EU = " + estimatedUtil);
-                
-                if (estimatedUtil < hostileFriendlyness) {
-                    return false;
-
-                }
-            }
-        }
-        return true;
-    }
-
-    boolean accaptable(double minimal, Bid offer) {
-        Set<Entry<Object, FrequencyOpponentModel>> models = opponents.entrySet();
-        for (Entry e : models) {
-            if (((FrequencyOpponentModel) e.getValue()).estimateUtility(offer) < minimal) {
-                return false;
-            }
-        }
-        return true;
-    }
-    
-    public boolean secondToLastTurn(){
-    	return timeline.getCurrentTime()>0.996;
-    }
-
-    public Bid generateBid() {
-        if (allbids == null) {
-            allbids = generateAllBids();
-        }
-        double fractionRemaining = timeline.getTime();
-        double hostileUtility = getUtilityPerFraction(fractionRemaining) + Math.random() * 0.05;
-        for (int i = 0; i < allbids.size(); i++) {
-            if (accaptable(allbids.get(i))) {
-                return allbids.get(i);
-            }
-        }
-        return allbids.get(0);
     }
 
     @Override
