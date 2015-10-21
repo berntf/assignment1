@@ -236,7 +236,9 @@ public class USBDROOG extends AbstractNegotiationParty {
     public Action chooseAction(List<Class<? extends Action>> list) {
         try {            
             Bid newBid = generateBid();
+            
             if (getUtility(newBid) >= getUtility(lastBid)) {
+            	lastBid=newBid;
                 return new Offer(newBid);
             } else {
                 return new Accept();
