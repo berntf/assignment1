@@ -43,6 +43,10 @@ public class USBNAT extends AbstractNegotiationParty {
     private boolean even = true;
     private int rounds = 0;
 
+    private int givenNash = 0;
+    private final int panic = 5;
+    private final int shouldSwitch = 3;
+
     @Override
     public void init(UtilitySpace utilSpace, Deadline dl, TimeLineInfo tl, long randomSeed, AgentID agentId) {
         super.init(utilSpace, dl, tl, randomSeed, agentId);
@@ -177,8 +181,25 @@ public class USBNAT extends AbstractNegotiationParty {
         }
     }
 
+    public Bid getNash() {
+        double nash = -1;
+        Bid ret = null;
+        for (Bid option : allbids) {
+            double nashv = getUtility(option);
+            for (Entry<Object, FrequencyOpponentModel> entry : opponents.entrySet()) {
+                nashv = nashv * entry.getValue().estimateUtility(option);
+            }
+            if (nashv > nash) {
+                nash = nashv;
+                ret = option;
+            }
+
+        }
+        return ret;
+    }
+
     //Find maximum util bid that everyone else has already accepted
-    private Bid findPanicBid() {
+    private Bid findMaxAccepted() {
         double max = 0;
         Bid ret = null;
 
@@ -194,6 +215,21 @@ public class USBNAT extends AbstractNegotiationParty {
         }
 
         return ret;
+    }
+
+    private Bid findPanicBid() {
+        Bid max = findMaxAccepted();
+
+        if (givenNash < shouldSwitch) {
+            Bid nash = getNash();
+
+            if (nash != null && (max == null || getUtility(nash) >= getUtility(max))) {
+                givenNash++;
+                return nash;
+            }
+        }
+
+        return max;
     }
 
     private ArrayList<Bid> generateAllBids() {
@@ -261,7 +297,7 @@ public class USBNAT extends AbstractNegotiationParty {
             rounds++;
 
             double roundsLeft = Util.estimatedRoundsLeft(getTimeLine(), rounds);
-            if (getTimeLine().getTime() >= start && roundsLeft <= 4) {
+            if (getTimeLine().getTime() >= start && roundsLeft <= panic) {
                 if (roundsLeft <= 2) {
                     return new Accept();
                 } else {
