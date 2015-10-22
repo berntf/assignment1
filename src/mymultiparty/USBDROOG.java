@@ -337,7 +337,7 @@ public Bid generateForNash(){
                 return allbids.get(i);
             }
         }
-        return allbids.get(0);
+        return allbids.get(0);*/
     }
 
     
