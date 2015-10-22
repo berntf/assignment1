@@ -38,7 +38,7 @@ public class Util {
     
     public static boolean shouldPanic(TimeLineInfo time, int rounds) {
         if (time.getType() == Timeline.Type.Rounds) {
-            return (time.getTotalTime() - rounds) == 1;
+            return (time.getTotalTime() - rounds) <= 1;
         } else {
             return (time.getTotalTime() - time.getCurrentTime()) <= 1.5*time.getCurrentTime()/rounds;
         }
