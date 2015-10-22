@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<multilateralTournamentsConfiguration>
+    <tournaments>
+        <tournament>
+            <deadline>
+<<<<<<< HEAD
+                <value>2000</value>
+                <type>ROUND</type>
+=======
+                <value>180</value>
+                <type>TIME</type>
+>>>>>>> ffbc17a96c4b9e99c9a39e599bbf53bd21e58ad8
+                <DEFAULT_TIME_OUT>180</DEFAULT_TIME_OUT>
+            </deadline>
+            <protocolItem hasMediatorProfile="false" hasMediator="false" description="Each agents makes offer, counter-offer, or accepts" classPath="negotiator.protocol.StackedAlternatingOffersProtocol" protocolName="Stacked Alternating Offers Protocol for Multi-Lateral Negotiation (SAOPMN)"/>
+            <partyRepItems>
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="3. ParsAgent" classPath="agents.anac.y2015.ParsAgent.ParsAgent" partyName="ANAC2015-3-ParsAgent">
+                    <properties/>
+                </item>
+<<<<<<< HEAD
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="5. Mercury " classPath="agents.anac.y2015.Mercury.Mercury" partyName="ANAC2015-5-Mercury">
+                    <properties/>
+                </item>
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="6. Atlas" classPath="agents.anac.y2015.Atlas3.Atlas3" partyName="ANAC2015-6-Atlas">
+                    <properties/>
+                </item>
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBNAT" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBNAT.class" partyName="USBNAT">
+=======
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBDROOG" classPath="/home/thijs/Desktop/code/assignment1/bin/mymultiparty/USBDROOG.class" partyName="USBDROOG">
+>>>>>>> ffbc17a96c4b9e99c9a39e599bbf53bd21e58ad8
+                    <properties/>
+                </item>
+            </partyRepItems>
+            <partyProfileItems>
+<<<<<<< HEAD
+                <item url="file:etc/templates/Domain4/Domain4_util2.xml"/>
+                <item url="file:etc/templates/Domain4/Domain4_util4.xml"/>
+                <item url="file:etc/templates/Domain4/Domain4_util5.xml"/>
+=======
+                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile7.xml"/>
+                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile8.xml"/>
+                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile9.xml"/>
+>>>>>>> ffbc17a96c4b9e99c9a39e599bbf53bd21e58ad8
+            </partyProfileItems>
+            <numSessions>1</numSessions>
+            <numberOfAgentsPerSession>3</numberOfAgentsPerSession>
+            <repetitionAllowed>false</repetitionAllowed>
+        </tournament>
+    </tournaments>
+</multilateralTournamentsConfiguration>
