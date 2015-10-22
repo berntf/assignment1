@@ -3,16 +3,16 @@
     <tournaments>
         <tournament>
             <deadline>
-                <value>180</value>
-                <type>TIME</type>
+                <value>2000</value>
+                <type>ROUND</type>
                 <DEFAULT_TIME_OUT>180</DEFAULT_TIME_OUT>
             </deadline>
             <protocolItem hasMediatorProfile="false" hasMediator="false" description="Each agents makes offer, counter-offer, or accepts" classPath="negotiator.protocol.StackedAlternatingOffersProtocol" protocolName="Stacked Alternating Offers Protocol for Multi-Lateral Negotiation (SAOPMN)"/>
             <partyRepItems>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="1. Phoenix" classPath="agents.anac.y2015.Phoenix.PhoenixParty" partyName="ANAC2015-1-Phoenix">
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="9. AgentW" classPath="agents.anac.y2015.AgentW.AgentW" partyName="ANAC2015-9-AgentW">
                     <properties/>
                 </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="2. CUHK" classPath="agents.anac.y2015.cuhkagent2015.CUHKAgent2015" partyName="ANAC2015-2-CUHK">
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="10.  agents.anac.y2015.AgentX.AgentX " classPath="agents.anac.y2015.AgentX.AgentX" partyName="ANAC2015-10-AgentX">
                     <properties/>
                 </item>
                 <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBDROOG" classPath="/home/thijs/Desktop/code/assignment1/bin/mymultiparty/USBDROOG.class" partyName="USBDROOG">
@@ -20,9 +20,9 @@
                 </item>
             </partyRepItems>
             <partyProfileItems>
-                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile7.xml"/>
-                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile8.xml"/>
-                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile9.xml"/>
+                <item url="file:etc/templates/partydomain/party2_utility.xml"/>
+                <item url="file:etc/templates/partydomain/party3_utility.xml"/>
+                <item url="file:etc/templates/partydomain/party4_utility.xml"/>
             </partyProfileItems>
             <numSessions>1</numSessions>
             <numberOfAgentsPerSession>3</numberOfAgentsPerSession>

@@ -331,8 +331,8 @@ public Bid generateForNash(){
     		return allbids.get(0);
     	}
     	
-    	return generateForNash();
-        /*for (int i = 0; i < allbids.size(); i++) {
+    	//return generateForNash();
+        for (int i = 0; i < allbids.size(); i++) {
             if (accaptable(allbids.get(i))) {
                 return allbids.get(i);
             }
