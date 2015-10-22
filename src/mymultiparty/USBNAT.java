@@ -261,7 +261,7 @@ public class USBNAT extends AbstractNegotiationParty {
             rounds++;
 
             double roundsLeft = Util.estimatedRoundsLeft(getTimeLine(), rounds);
-            if (roundsLeft <= 4) {
+            if (getTimeLine().getTime() >= start && roundsLeft <= 4) {
                 if (roundsLeft <= 2) {
                     return new Accept();
                 } else {
