@@ -47,10 +47,6 @@ public class USBNAT extends AbstractNegotiationParty {
     private int givenNash = 0;
     private final int panic = 5;
     private final int shouldSwitch = 3;
-    
-    private final Random rng = new Random();
-    private int maxLowerMax = 11;
-    private Bid maxGiven;
 
     @Override
     public void init(UtilitySpace utilSpace, Deadline dl, TimeLineInfo tl, long randomSeed, AgentID agentId) {
@@ -59,18 +55,6 @@ public class USBNAT extends AbstractNegotiationParty {
         absoluteMinimum = Math.max(0.2, utilitySpace.getReservationValueUndiscounted());
 
         allbids = generateAllBids();
-        
-        maxLowerMax = Math.min(allbids.size(), maxLowerMax);
-        
-        while(getUtility(allbids.get(maxLowerMax-1)) < 1-momentum) {
-            maxLowerMax--;
-        }
-        
-        maxGiven = allbids.get(0);
-    }
-    
-    private Bid getAMaxBid() {
-        return maxGiven = allbids.get(rng.nextInt(maxLowerMax));
     }
 
     private double getMinUtility(double t) {
@@ -174,7 +158,7 @@ public class USBNAT extends AbstractNegotiationParty {
         double time = getTimeLine().getTime();
 
         if (time < start) {
-            return getAMaxBid();
+            return allbids.get(0);
         }
 
         HashMap<Object, Double> minUtils = getMinUtils();
@@ -329,7 +313,7 @@ public class USBNAT extends AbstractNegotiationParty {
             even = !even;
             Bid b = generateBidJ();
             if (getUtility(b) > getUtility(lastBid)) {
-                b = even ? b : getAMaxBid();
+                b = even ? b : allbids.get(0);
                 lastBid = b;
                 return new Offer(b);
             } else {
@@ -376,7 +360,7 @@ public class USBNAT extends AbstractNegotiationParty {
     }
 
     public void addReject(Object sender, Bid b) {
-        if (b.equals(maxGiven)) {
+        if (b.equals(allbids.get(0))) {
             return;
         }
         
