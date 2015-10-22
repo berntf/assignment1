@@ -24,7 +24,7 @@ import negotiator.utility.UtilitySpace;
 
 public class USBDROOG extends AbstractNegotiationParty {
 
-    HashMap<Object, FrequencyOpponentModel> opponents = new HashMap<>();
+    HashMap<Object, BetterFOM> opponents = new HashMap<>();
     HashMap<Object, ArrayList<Bid>> accepts = new HashMap<>();
     Bid lastBid = null;
     double n = 0.1;
@@ -180,7 +180,7 @@ public class USBDROOG extends AbstractNegotiationParty {
     	Bid ret=null;
     	for(Bid option: allbids){
     		double nashv=getUtility(option);
-    	    for (Entry<Object,FrequencyOpponentModel> entry : opponents.entrySet()) {
+    	    for (Entry<Object,BetterFOM> entry : opponents.entrySet()) {
     	    	nashv=nashv*entry.getValue().estimateUtility(option);
     	    }
     	    if(nashv>nash){
@@ -283,7 +283,7 @@ public Bid generateForNash(){
     }
 
     boolean accaptable(Bid offer) {
-        Set<Map.Entry<Object, FrequencyOpponentModel>> models = opponents.entrySet();
+        Set<Map.Entry<Object, BetterFOM>> models = opponents.entrySet();
         for (Map.Entry e : models) {
             double fractionRemaining = timeline.getTime();
             double offset=1;
@@ -293,8 +293,7 @@ public Bid generateForNash(){
         	ArrayList<Bid> offers = accepts.get(e.getKey());
             if (!offers.isEmpty()) {
 
-                double hostileFriendlyness = getUtility(offers.get(offers.size() - 1));
-                
+                double hostileFriendlyness = getUtility(offers.get(offers.size() - 1));        
                 
                 double estimatedUtil = ((FrequencyOpponentModel) e.getValue()).estimateUtility(offer);
                 
@@ -309,7 +308,7 @@ public Bid generateForNash(){
     }
 
     boolean accaptable(double minimal, Bid offer) {
-        Set<Map.Entry<Object, FrequencyOpponentModel>> models = opponents.entrySet();
+        Set<Map.Entry<Object, BetterFOM>> models = opponents.entrySet();
         for (Map.Entry e : models) {
             if (((FrequencyOpponentModel) e.getValue()).estimateUtility(offer) < minimal) {
                 return false;
@@ -328,18 +327,21 @@ public Bid generateForNash(){
         if(fractionRemaining>0.97){
         	return getNash();
         }
-    	if(bidnum<20){
+    	if(fractionRemaining<0.1){
     		return allbids.get(0);
     	}
     	
-        for (int i = 0; i < allbids.size(); i++) {
+    	return generateForNash();
+        /*for (int i = 0; i < allbids.size(); i++) {
             if (accaptable(allbids.get(i))) {
                 return allbids.get(i);
             }
         }
-        return allbids.get(0);
+        return allbids.get(0);*/
     }
 
+    
+    
     @Override
     public void receiveMessage(Object sender, Action action) {
         super.receiveMessage(sender, action);

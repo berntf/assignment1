@@ -3,7 +3,7 @@
     <tournaments>
         <tournament>
             <deadline>
-                <value>30</value>
+                <value>180</value>
                 <type>TIME</type>
                 <DEFAULT_TIME_OUT>180</DEFAULT_TIME_OUT>
             </deadline>
@@ -15,20 +15,14 @@
                 <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="2. CUHK" classPath="agents.anac.y2015.cuhkagent2015.CUHKAgent2015" partyName="ANAC2015-2-CUHK">
                     <properties/>
                 </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="3. ParsAgent" classPath="agents.anac.y2015.ParsAgent.ParsAgent" partyName="ANAC2015-3-ParsAgent">
-                    <properties/>
-                </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBNAT" classPath="/home/thijs/Desktop/code/assignment1/bin/mymultiparty/USBNAT.class" partyName="USBNAT">
-                    <properties/>
-                </item>
                 <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBDROOG" classPath="/home/thijs/Desktop/code/assignment1/bin/mymultiparty/USBDROOG.class" partyName="USBDROOG">
                     <properties/>
                 </item>
             </partyRepItems>
             <partyProfileItems>
-                <item url="file:etc/templates/partydomain/party2_utility.xml"/>
-                <item url="file:etc/templates/partydomain/party3_utility.xml"/>
-                <item url="file:etc/templates/partydomain/party4_utility.xml"/>
+                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile7.xml"/>
+                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile8.xml"/>
+                <item url="file:etc/templates/ANAC2015/group5-car_domain/car-Profile9.xml"/>
             </partyProfileItems>
             <numSessions>1</numSessions>
             <numberOfAgentsPerSession>3</numberOfAgentsPerSession>
