@@ -191,7 +191,16 @@ public class USBDROOG extends AbstractNegotiationParty {
     	}
     	return ret;
     }
-
+    int bn;
+public Bid generateForNash(){
+	if(++bn%3!=0){
+		return getNash();
+	}else{
+		return allbids.get(0);
+	}
+	
+}
+    
     
     private ArrayList<Bid> generateAllBids() {
         ArrayList<Issue> issues = utilitySpace.getDomain().getIssues();
@@ -312,11 +321,12 @@ public class USBDROOG extends AbstractNegotiationParty {
     public Bid generateBid() {
     	bidnum++;
         double fractionRemaining = timeline.getTime();
-        if(fractionRemaining<0.97){
-        	return getNash();
-        }
+
     	if (allbids == null) {
             allbids = generateAllBids();
+        }
+        if(fractionRemaining>0.97){
+        	return getNash();
         }
     	if(bidnum<20){
     		return allbids.get(0);
