@@ -36,12 +36,12 @@ public class Util {
         return ret;
     }
     
-    public static boolean shouldPanic(TimeLineInfo time, int rounds) {
+    public static double estimatedRoundsLeft(TimeLineInfo time, int currentRound) {
         if (time.getType() == Timeline.Type.Rounds) {
-            return (time.getTotalTime() - rounds) <= 1;
+            return time.getTotalTime() - currentRound;
         } else {
-            return (time.getTotalTime() - time.getCurrentTime()) <= 1.5*time.getCurrentTime()/rounds;
-        }
+            return (time.getTotalTime() - time.getCurrentTime())/ (time.getCurrentTime()/currentRound);
+        }        
     }
     
     public static <T extends Number> double getSum(Collection<T> c) {

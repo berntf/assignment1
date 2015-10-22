@@ -41,7 +41,7 @@ public class USBNAT extends AbstractNegotiationParty {
     private final int rejectsSize = 10;
 
     private boolean even = true;
-    private boolean panic = false;
+    private int rounds = 0;
 
     @Override
     public void init(UtilitySpace utilSpace, Deadline dl, TimeLineInfo tl, long randomSeed, AgentID agentId) {
@@ -176,6 +176,23 @@ public class USBNAT extends AbstractNegotiationParty {
             return generateMBM(minUtility);
         }
     }
+    
+    //Find maximum util bid that everyone else has already accepted
+    private Bid findPanicBid() {
+        double max = 0;
+        Bid ret = null;
+        
+        for (Bid b : allbids) {
+            double util = getUtility(b);
+            
+            if (util > max) {
+                max = util;
+                ret = b;
+            }
+        }
+        
+        return ret;
+    }
 
     private ArrayList<Bid> generateAllBids() {
         ArrayList<Issue> issues = utilitySpace.getDomain().getIssues();
@@ -239,7 +256,23 @@ public class USBNAT extends AbstractNegotiationParty {
     @Override
     public Action chooseAction(List<Class<? extends Action>> list) {
         try {
-            System.out.println(getTimeLine().getCurrentTime() + " / " + getTimeLine().getTotalTime());
+            rounds++;
+            
+            double roundsLeft = Util.estimatedRoundsLeft(getTimeLine(), rounds);
+            if (roundsLeft <= 3) {
+                if (roundsLeft <= 2) {
+                    return new Accept();
+                } else {
+                    Bid b = findPanicBid();
+                    if (b == null || getUtility(b) <= getUtility(lastBid)) {
+                        return new Accept();
+                    } else {
+                        return new Offer(b);
+                    }
+                }
+            }
+            
+            
             Bid b = generateBidJ(false);
             Bid comparisonBid = even ? generateBidJ(true) : b;
             if (getUtility(comparisonBid) > getUtility(lastBid)) {
