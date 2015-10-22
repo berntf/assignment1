@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import negotiator.AgentID;
 import negotiator.Bid;
 import negotiator.Deadline;
@@ -40,12 +41,16 @@ public class USBNAT extends AbstractNegotiationParty {
     private final double start = 0.6;
     private final int rejectsSize = 10;
 
-    private boolean even = true;
     private int rounds = 0;
+    private boolean even = false;
 
     private int givenNash = 0;
     private final int panic = 5;
     private final int shouldSwitch = 3;
+    
+    private final Random rng = new Random();
+    private int maxLowerMax = 11;
+    private Bid maxGiven;
 
     @Override
     public void init(UtilitySpace utilSpace, Deadline dl, TimeLineInfo tl, long randomSeed, AgentID agentId) {
@@ -54,6 +59,18 @@ public class USBNAT extends AbstractNegotiationParty {
         absoluteMinimum = Math.max(0.2, utilitySpace.getReservationValueUndiscounted());
 
         allbids = generateAllBids();
+        
+        maxLowerMax = Math.min(allbids.size(), maxLowerMax);
+        
+        while(getUtility(allbids.get(maxLowerMax-1)) < 1-momentum) {
+            maxLowerMax--;
+        }
+        
+        maxGiven = allbids.get(0);
+    }
+    
+    private Bid getAMaxBid() {
+        return maxGiven = allbids.get(rng.nextInt(maxLowerMax));
     }
 
     private double getMinUtility(double t) {
@@ -153,12 +170,11 @@ public class USBNAT extends AbstractNegotiationParty {
         return bestBid;
     }
 
-    private Bid generateBidJ(boolean forced) {
+    private Bid generateBidJ() {
         double time = getTimeLine().getTime();
-        even = !even;
 
-        if (time < start || (even && !forced)) {
-            return allbids.get(0);
+        if (time < start) {
+            return getAMaxBid();
         }
 
         HashMap<Object, Double> minUtils = getMinUtils();
@@ -310,9 +326,10 @@ public class USBNAT extends AbstractNegotiationParty {
                 }
             }
 
-            Bid b = generateBidJ(false);
-            Bid comparisonBid = even ? generateBidJ(true) : b;
-            if (getUtility(comparisonBid) > getUtility(lastBid)) {
+            even = !even;
+            Bid b = generateBidJ();
+            if (getUtility(b) > getUtility(lastBid)) {
+                b = even ? b : getAMaxBid();
                 lastBid = b;
                 return new Offer(b);
             } else {
@@ -359,10 +376,10 @@ public class USBNAT extends AbstractNegotiationParty {
     }
 
     public void addReject(Object sender, Bid b) {
-        if (b.equals(allbids.get(0))) {
+        if (b.equals(maxGiven)) {
             return;
         }
-
+        
         LinkedList<Bid> list = rejects.get(sender);
 
         list.addLast(b);
