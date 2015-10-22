@@ -196,7 +196,7 @@ public Bid generateForNash(){
 	if(++bn%3!=0){
 		return getNash();
 	}else{
-		return allbids.get(0);
+		return allbids.get((int) (Math.random()*(allbids.size())/20));
 	}
 	
 }
@@ -337,7 +337,7 @@ public Bid generateForNash(){
                 return allbids.get(i);
             }
         }
-        return allbids.get(0);
+        return allbids.get(0);*/
     }
 
     
