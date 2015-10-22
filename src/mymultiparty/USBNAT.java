@@ -176,21 +176,23 @@ public class USBNAT extends AbstractNegotiationParty {
             return generateMBM(minUtility);
         }
     }
-    
+
     //Find maximum util bid that everyone else has already accepted
     private Bid findPanicBid() {
         double max = 0;
         Bid ret = null;
-        
+
         for (Bid b : allbids) {
-            double util = getUtility(b);
-            
-            if (util > max) {
-                max = util;
-                ret = b;
+            if (!rejected(b)) {
+                double util = getUtility(b);
+
+                if (util > max) {
+                    max = util;
+                    ret = b;
+                }
             }
         }
-        
+
         return ret;
     }
 
@@ -257,9 +259,9 @@ public class USBNAT extends AbstractNegotiationParty {
     public Action chooseAction(List<Class<? extends Action>> list) {
         try {
             rounds++;
-            
+
             double roundsLeft = Util.estimatedRoundsLeft(getTimeLine(), rounds);
-            if (roundsLeft <= 3) {
+            if (roundsLeft <= 4) {
                 if (roundsLeft <= 2) {
                     return new Accept();
                 } else {
@@ -271,8 +273,7 @@ public class USBNAT extends AbstractNegotiationParty {
                     }
                 }
             }
-            
-            
+
             Bid b = generateBidJ(false);
             Bid comparisonBid = even ? generateBidJ(true) : b;
             if (getUtility(comparisonBid) > getUtility(lastBid)) {
@@ -289,19 +290,19 @@ public class USBNAT extends AbstractNegotiationParty {
     }
 
     @Override
-    public void receiveMessage(Object sender, Action action) {        
+    public void receiveMessage(Object sender, Action action) {
         try {
-        super.receiveMessage(sender, action);
+            super.receiveMessage(sender, action);
 
-        if ("Protocol".equals(sender)) {
-            return;
-        }
+            if ("Protocol".equals(sender)) {
+                return;
+            }
 
-        if (!opponents.containsKey(sender)) {
-            opponents.put(sender, new BetterFOM(getUtilitySpace().getDomain(), n));
-            accepts.put(sender, new ArrayList<Bid>());
-            rejects.put(sender, new LinkedList<Bid>());
-        }
+            if (!opponents.containsKey(sender)) {
+                opponents.put(sender, new BetterFOM(getUtilitySpace().getDomain(), n));
+                accepts.put(sender, new ArrayList<Bid>());
+                rejects.put(sender, new LinkedList<Bid>());
+            }
 
             if (action instanceof Offer) {
                 if (lastBid != null) {
