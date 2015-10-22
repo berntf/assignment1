@@ -196,7 +196,7 @@ public Bid generateForNash(){
 	if(++bn%3!=0){
 		return getNash();
 	}else{
-		return allbids.get((int) (Math.random()*(allbids.size())/20));
+		return allbids.get((int) (Math.random()*Math.random()*(allbids.size())/20));
 	}
 	
 }
@@ -261,12 +261,15 @@ public Bid generateForNash(){
         return ret;
     }
 
+
+   int rounds=0;
     @Override
     public Action chooseAction(List<Class<? extends Action>> list) {
-        try {            
+    rounds++;
+    	try {            
             Bid newBid = generateBid();
             double fractionRemaining = timeline.getTime();
-            if(fractionRemaining>0.994){
+            if(Util.shouldPanic(getTimeLine(), rounds)){
             	return new Accept();
             }
             if (getUtility(newBid) > getUtility(lastBid)) {
@@ -277,6 +280,7 @@ public Bid generateForNash(){
             }
         } catch (Exception ex) {
             System.err.println("Exception in chooseAction: " + ex.getMessage());
+            System.err.println("Exception:" +ex.getStackTrace());
             ex.printStackTrace();
             return new Accept();
         }
