@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import negotiator.AgentID;
 import negotiator.Bid;
@@ -26,8 +27,9 @@ import negotiator.utility.UtilitySpace;
 //Als zon bid niet bestaat: Maximaliseer utilities tegenstander, maar blijf voldoen aan onze eis. 
 public class USBNAT extends AbstractNegotiationParty {
 
-    HashMap<Object, FrequencyOpponentModel> opponents = new HashMap<>();
-    HashMap<Object, ArrayList<Bid>> accepts = new HashMap<>();
+    HashMap<Object, FrequencyOpponentModel> opponents = new HashMap();
+    HashMap<Object, ArrayList<Bid>> accepts = new HashMap();
+    HashMap<Object, LinkedList<Bid>> rejects = new HashMap();
     Bid lastBid = null;
     double n = 0.1;
     ArrayList<Bid> allbids = null;
@@ -36,6 +38,7 @@ public class USBNAT extends AbstractNegotiationParty {
     private final double tries = 10;//Sinus periods
     private final double momentum = 0.05;
     private final double start = 0.6;
+    private final int rejectsSize = 10;
     
     private boolean even = true;
 
@@ -225,9 +228,11 @@ public class USBNAT extends AbstractNegotiationParty {
     @Override
     public Action chooseAction(List<Class<? extends Action>> list) {
         try {            
-            if (getUtility(generateBidJ(true)) > getUtility(lastBid)) {
-                lastBid = generateBidJ(false);
-                return new Offer(lastBid);
+            Bid b = generateBidJ(false);
+            Bid comparisonBid = even ? generateBidJ(true) : b;
+            if (getUtility(comparisonBid) > getUtility(lastBid)) {
+                lastBid = b;
+                return new Offer(b);
             } else {
                 return new Accept();
             }
@@ -249,9 +254,11 @@ public class USBNAT extends AbstractNegotiationParty {
         if (!opponents.containsKey(sender)) {
             opponents.put(sender, new BetterFOM(getUtilitySpace().getDomain(), n));
             accepts.put(sender, new ArrayList<Bid>());
+            rejects.put(sender, new LinkedList<Bid>());
         }
 
         if (action instanceof Offer) {
+            addReject(sender, lastBid);
             lastBid = ((Offer) action).getBid();
             FrequencyOpponentModel OM = opponents.get(sender);
             try {
@@ -263,6 +270,16 @@ public class USBNAT extends AbstractNegotiationParty {
             accepts.get(sender).add(lastBid);
         } else if (action instanceof Accept) {
             accepts.get(sender).add(lastBid);
+        }
+    }
+    
+    public void addReject(Object sender, Bid b) {
+        LinkedList<Bid> list = rejects.get(sender);
+        
+        list.addLast(b);
+        
+        if (list.size() > rejectsSize) {
+            list.removeFirst();
         }
     }
 
