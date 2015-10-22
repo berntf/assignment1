@@ -3,32 +3,29 @@
     <tournaments>
         <tournament>
             <deadline>
-                <value>30</value>
-                <type>TIME</type>
+                <value>2000</value>
+                <type>ROUND</type>
                 <DEFAULT_TIME_OUT>180</DEFAULT_TIME_OUT>
             </deadline>
             <protocolItem hasMediatorProfile="false" hasMediator="false" description="Each agents makes offer, counter-offer, or accepts" classPath="negotiator.protocol.StackedAlternatingOffersProtocol" protocolName="Stacked Alternating Offers Protocol for Multi-Lateral Negotiation (SAOPMN)"/>
             <partyRepItems>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="1. Phoenix" classPath="agents.anac.y2015.Phoenix.PhoenixParty" partyName="ANAC2015-1-Phoenix">
-                    <properties/>
-                </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="2. CUHK" classPath="agents.anac.y2015.cuhkagent2015.CUHKAgent2015" partyName="ANAC2015-2-CUHK">
-                    <properties/>
-                </item>
                 <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="3. ParsAgent" classPath="agents.anac.y2015.ParsAgent.ParsAgent" partyName="ANAC2015-3-ParsAgent">
                     <properties/>
                 </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBNAT" classPath="/home/thijs/Desktop/code/assignment1/bin/mymultiparty/USBNAT.class" partyName="USBNAT">
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="5. Mercury " classPath="agents.anac.y2015.Mercury.Mercury" partyName="ANAC2015-5-Mercury">
                     <properties/>
                 </item>
-                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBDROOG" classPath="/home/thijs/Desktop/code/assignment1/bin/mymultiparty/USBDROOG.class" partyName="USBDROOG">
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="6. Atlas" classPath="agents.anac.y2015.Atlas3.Atlas3" partyName="ANAC2015-6-Atlas">
+                    <properties/>
+                </item>
+                <item protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBNAT" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBNAT.class" partyName="USBNAT">
                     <properties/>
                 </item>
             </partyRepItems>
             <partyProfileItems>
-                <item url="file:etc/templates/partydomain/party2_utility.xml"/>
-                <item url="file:etc/templates/partydomain/party3_utility.xml"/>
-                <item url="file:etc/templates/partydomain/party4_utility.xml"/>
+                <item url="file:etc/templates/Domain4/Domain4_util2.xml"/>
+                <item url="file:etc/templates/Domain4/Domain4_util4.xml"/>
+                <item url="file:etc/templates/Domain4/Domain4_util5.xml"/>
             </partyProfileItems>
             <numSessions>1</numSessions>
             <numberOfAgentsPerSession>3</numberOfAgentsPerSession>
