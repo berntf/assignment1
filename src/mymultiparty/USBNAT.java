@@ -131,7 +131,7 @@ public class USBNAT extends AbstractNegotiationParty {
         return bestBid;
     }
     
-    private Bid generateBidJ() {
+    private Bid generateBidJ(boolean forced) {
         if (allbids == null) {
             allbids = generateAllBids();
         }
@@ -139,7 +139,7 @@ public class USBNAT extends AbstractNegotiationParty {
         double time = getTimeLine().getTime();
         even = !even;
         
-        if (time < start || even) {
+        if (time < start || (even && !forced)) {
             return allbids.get(0);
         }
 
@@ -225,9 +225,9 @@ public class USBNAT extends AbstractNegotiationParty {
     @Override
     public Action chooseAction(List<Class<? extends Action>> list) {
         try {            
-            Bid newBid = generateBidJ();
-            if (getUtility(newBid) > getUtility(lastBid)) {
-                return new Offer(newBid);
+            if (getUtility(generateBidJ(true)) > getUtility(lastBid)) {
+                lastBid = generateBidJ(false);
+                return new Offer(lastBid);
             } else {
                 return new Accept();
             }

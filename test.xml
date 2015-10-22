@@ -26,9 +26,9 @@
                 </item>
             </partyRepItems>
             <partyProfileItems>
-                <item url="file:etc/templates/ANAC2015/group1-university/University_util4.xml"/>
-                <item url="file:etc/templates/ANAC2015/group1-university/University_util5.xml"/>
-                <item url="file:etc/templates/ANAC2015/group1-university/University_util6.xml"/>
+                <item url="file:etc/templates/partydomain/party2_utility.xml"/>
+                <item url="file:etc/templates/partydomain/party3_utility.xml"/>
+                <item url="file:etc/templates/partydomain/party4_utility.xml"/>
             </partyProfileItems>
             <numSessions>1</numSessions>
             <numberOfAgentsPerSession>3</numberOfAgentsPerSession>
