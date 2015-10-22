@@ -41,6 +41,7 @@ public class USBNAT extends AbstractNegotiationParty {
     private final int rejectsSize = 10;
 
     private boolean even = true;
+    private boolean panic = false;
 
     @Override
     public void init(UtilitySpace utilSpace, Deadline dl, TimeLineInfo tl, long randomSeed, AgentID agentId) {
@@ -74,7 +75,17 @@ public class USBNAT extends AbstractNegotiationParty {
                 }
             }
 
-            ret.put(entry.getKey(), min);
+            double maxRejected = 0;
+
+            for (Bid rejected : rejects.get(entry.getKey())) {
+                double util = model.estimateUtility(rejected);
+
+                if (util > maxRejected) {
+                    maxRejected = util;
+                }
+            }
+
+            ret.put(entry.getKey(), Math.max(min, maxRejected + momentum));
         }
 
         return ret;
@@ -147,15 +158,15 @@ public class USBNAT extends AbstractNegotiationParty {
         }
 
         HashMap<Object, Double> minUtils = getMinUtils();
-        double min = 1;
+        double max = 0;
 
         for (Double util : minUtils.values()) {
-            if (util < min) {
-                min = util;
+            if (util > max) {
+                max = util;
             }
         }
 
-        double minUtility = Math.max(min - momentum, getMinUtility((time - start) / (1 - start)));
+        double minUtility = Math.max(max - momentum, getMinUtility((time - start) / (1 - start)));
 
         Bid b = generateBAB(minUtils, minUtility);
 
@@ -228,6 +239,7 @@ public class USBNAT extends AbstractNegotiationParty {
     @Override
     public Action chooseAction(List<Class<? extends Action>> list) {
         try {
+            System.out.println(getTimeLine().getCurrentTime() + " / " + getTimeLine().getTotalTime());
             Bid b = generateBidJ(false);
             Bid comparisonBid = even ? generateBidJ(true) : b;
             if (getUtility(comparisonBid) > getUtility(lastBid)) {
@@ -244,7 +256,8 @@ public class USBNAT extends AbstractNegotiationParty {
     }
 
     @Override
-    public void receiveMessage(Object sender, Action action) {
+    public void receiveMessage(Object sender, Action action) {        
+        try {
         super.receiveMessage(sender, action);
 
         if ("Protocol".equals(sender)) {
@@ -257,21 +270,21 @@ public class USBNAT extends AbstractNegotiationParty {
             rejects.put(sender, new LinkedList<Bid>());
         }
 
-        if (action instanceof Offer) {
-            if (lastBid != null) {
-                addReject(sender, lastBid);
-            }
-            lastBid = ((Offer) action).getBid();
-            FrequencyOpponentModel OM = opponents.get(sender);
-            try {
+            if (action instanceof Offer) {
+                if (lastBid != null) {
+                    addReject(sender, lastBid);
+                }
+                lastBid = ((Offer) action).getBid();
+                FrequencyOpponentModel OM = opponents.get(sender);
                 OM.addBid(lastBid);
-            } catch (Exception ex) {
-                System.err.println("Exception in receiveMessage: " + ex.getMessage());
+
+                accepts.get(sender).add(lastBid);
+            } else if (action instanceof Accept) {
+                accepts.get(sender).add(lastBid);
             }
 
-            accepts.get(sender).add(lastBid);
-        } else if (action instanceof Accept) {
-            accepts.get(sender).add(lastBid);
+        } catch (Exception ex) {
+            System.err.println("Exception in receiveMessage: " + ex.getMessage());
         }
     }
 

@@ -8,6 +8,8 @@ import negotiator.issue.IssueDiscrete;
 import negotiator.issue.IssueInteger;
 import negotiator.issue.Value;
 import negotiator.issue.ValueInteger;
+import negotiator.session.TimeLineInfo;
+import negotiator.session.Timeline;
 
 public class Util {
     public static ArrayList<Value> getValues(Issue issue) {
@@ -32,6 +34,14 @@ public class Util {
             }
         
         return ret;
+    }
+    
+    public static boolean shouldPanic(TimeLineInfo time, int rounds) {
+        if (time.getType() == Timeline.Type.Rounds) {
+            return (time.getTotalTime() - rounds) == 1;
+        } else {
+            return (time.getTotalTime() - time.getCurrentTime()) <= 1.5*time.getCurrentTime()/rounds;
+        }
     }
     
     public static <T extends Number> double getSum(Collection<T> c) {
