@@ -20,7 +20,7 @@ import negotiator.parties.AbstractNegotiationParty;
 import negotiator.session.TimeLineInfo;
 import negotiator.utility.UtilitySpace;
 
-//Idee: Houd een minimumutility bij, verlaag deze aan het begin snel en gooi hem aan het eind weer omhoog
+//Idee: Houd een minimumutility bij, verlaag deze in het algemeen maar fluctueer een beetje omhoog en omlaag om de tegenstander meer te laten conceden
 //Gebruik de geschiedenis van bids en accepts van de tegenstander om te kijken bij welke (eigen!) utilities zij zouden accepteren
 //Gebruik deze informatie om een bid op te stellen dat voldoet aan onze eigen utility eis en die van de tegenstanders en onze utility maximaliseert.
 //Als zon bid niet bestaat: Maximaliseer utilities tegenstander, maar blijf voldoen aan onze eis. 
@@ -33,9 +33,9 @@ public class USBNAT extends AbstractNegotiationParty {
     ArrayList<Bid> allbids = null;
 
     private double absoluteMinimum = 1;
-    private final double tries = 20;//Sinus periods
+    private final double tries = 10;//Sinus periods
     private final double momentum = 0.05;
-    private final double start = 0.7;
+    private final double start = 0.6;
     
     private boolean even = true;
 
