@@ -39,7 +39,7 @@ public class USBNAT extends AbstractNegotiationParty {
     private final double momentum = 0.05;
     private final double start = 0.6;
     private final int rejectsSize = 10;
-    
+
     private boolean even = true;
 
     @Override
@@ -47,6 +47,8 @@ public class USBNAT extends AbstractNegotiationParty {
         super.init(utilSpace, dl, tl, randomSeed, agentId);
 
         absoluteMinimum = Math.max(0.2, utilitySpace.getReservationValueUndiscounted());
+
+        allbids = generateAllBids();
     }
 
     private double getMinUtility(double t) {
@@ -66,99 +68,97 @@ public class USBNAT extends AbstractNegotiationParty {
 
             for (Bid b : acc) {
                 double util = model.estimateUtility(b);
-                
+
                 if (util < min) {
                     min = util;
                 }
             }
-            
+
             ret.put(entry.getKey(), min);
         }
-        
+
         return ret;
     }
 
-    private boolean isAcceptable(Bid b, HashMap<Object,Double> minUtils) {
-        for (Entry<Object,Double> entry : minUtils.entrySet()) {
+    private boolean isAcceptable(Bid b, HashMap<Object, Double> minUtils) {
+        for (Entry<Object, Double> entry : minUtils.entrySet()) {
             if (opponents.get(entry.getKey()).estimateUtility(b) < entry.getValue()) {
                 return false;
             }
         }
-        
+
         return true;
     }
-    
+
     //Best Acceptable Bid
-    private Bid generateBAB(HashMap<Object,Double> minUtils, double myMin) {
+    private Bid generateBAB(HashMap<Object, Double> minUtils, double myMin) {
         Iterator<Bid> it = allbids.iterator();
-        
+
         while (it.hasNext()) {
             Bid b = it.next();
-            
-            if (myMin > getUtility(b)) {
-                return null;
-            }
-            
-            if (isAcceptable(b, minUtils)) {
-                return b;
+
+            if (!rejected(b)) {
+                if (myMin > getUtility(b)) {
+                    return null;
+                }
+
+                if (isAcceptable(b, minUtils)) {
+                    return b;
+                }
             }
         }
-        
+
         return null;
     }
-    
+
     //Max Bid over Minimum
     private Bid generateMBM(double minUtility) {
         double max = 0;
-        Bid bestBid = null;
-        
+        Bid bestBid = allbids.get(0);
+
         for (Bid b : allbids) {
-            if (getUtility(b) >= minUtility) {
+            if (getUtility(b) >= minUtility && !rejected(b)) {
                 double min = 1;
-                
+
                 for (FrequencyOpponentModel model : opponents.values()) {
                     double util = model.estimateUtility(b);
-                    
+
                     if (util < min) {
                         min = util;
                     }
                 }
-                
+
                 if (bestBid == null || max < min) {
                     max = min;
                     bestBid = b;
                 }
             }
         }
-        
+
         return bestBid;
     }
-    
+
     private Bid generateBidJ(boolean forced) {
-        if (allbids == null) {
-            allbids = generateAllBids();
-        }
-        
         double time = getTimeLine().getTime();
         even = !even;
-        
+
         if (time < start || (even && !forced)) {
             return allbids.get(0);
         }
 
-        HashMap<Object,Double> minUtils = getMinUtils();
+        HashMap<Object, Double> minUtils = getMinUtils();
         double min = 1;
-        
+
         for (Double util : minUtils.values()) {
             if (util < min) {
                 min = util;
             }
         }
-        
-        double minUtility = Math.max(min-momentum, getMinUtility((time - start)/(1 - start)));
-        
+
+        double minUtility = Math.max(min - momentum, getMinUtility((time - start) / (1 - start)));
+
         Bid b = generateBAB(minUtils, minUtility);
-        
+
         if (b != null) {
             return b;
         } else {
@@ -227,7 +227,7 @@ public class USBNAT extends AbstractNegotiationParty {
 
     @Override
     public Action chooseAction(List<Class<? extends Action>> list) {
-        try {            
+        try {
             Bid b = generateBidJ(false);
             Bid comparisonBid = even ? generateBidJ(true) : b;
             if (getUtility(comparisonBid) > getUtility(lastBid)) {
@@ -246,7 +246,7 @@ public class USBNAT extends AbstractNegotiationParty {
     @Override
     public void receiveMessage(Object sender, Action action) {
         super.receiveMessage(sender, action);
-        
+
         if ("Protocol".equals(sender)) {
             return;
         }
@@ -258,7 +258,9 @@ public class USBNAT extends AbstractNegotiationParty {
         }
 
         if (action instanceof Offer) {
-            addReject(sender, lastBid);
+            if (lastBid != null) {
+                addReject(sender, lastBid);
+            }
             lastBid = ((Offer) action).getBid();
             FrequencyOpponentModel OM = opponents.get(sender);
             try {
@@ -272,15 +274,29 @@ public class USBNAT extends AbstractNegotiationParty {
             accepts.get(sender).add(lastBid);
         }
     }
-    
+
     public void addReject(Object sender, Bid b) {
+        if (b.equals(allbids.get(0))) {
+            return;
+        }
+
         LinkedList<Bid> list = rejects.get(sender);
-        
+
         list.addLast(b);
-        
+
         if (list.size() > rejectsSize) {
             list.removeFirst();
         }
     }
 
+    public boolean rejected(Bid b) {
+        boolean rejected = false;
+        Iterator<LinkedList<Bid>> it = rejects.values().iterator();
+
+        while (it.hasNext() && !rejected) {
+            rejected = it.next().contains(b);
+        }
+
+        return rejected;
+    }
 }

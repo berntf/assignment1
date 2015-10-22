@@ -90,13 +90,10 @@
             <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="24. JonnyBlack" classPath="agents.anac.y2015.JonnyBlack.JonnyBlack" partyName="ANAC2015-24-JonnyBlack">
                 <properties/>
             </partyRepItem>
-            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="example party group 13" classPath="/Users/Bernt/Documents/Study/TU Delft - MSc - MKE/IN4010 - Artificial Intelligence/Assignment/1/java/bin/mymultiparty/Group13.class" partyName="Group13">
+            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBNAT" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBNAT.class" partyName="USBNAT">
                 <properties/>
             </partyRepItem>
-            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBNAT" classPath="/home/thijs/Desktop/code/assignment1/bin/mymultiparty/USBNAT.class" partyName="USBNAT">
-                <properties/>
-            </partyRepItem>
-            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBDROOG" classPath="/home/thijs/Desktop/code/assignment1/bin/mymultiparty/USBDROOG.class" partyName="USBDROOG">
+            <partyRepItem protocolClassPath="negotiator.protocol.StackedAlternatingOffersProtocol" description="USBDROOG" classPath="/home/jorik/NetBeansProjects/IN4010Assignment1/build/classes/mymultiparty/USBDROOG.class" partyName="USBDROOG">
                 <properties/>
             </partyRepItem>
         </partyRepItems>
