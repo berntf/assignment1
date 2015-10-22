@@ -24,7 +24,7 @@ import negotiator.utility.UtilitySpace;
 
 public class USBDROOG extends AbstractNegotiationParty {
 
-    HashMap<Object, BetterFOM> opponents = new HashMap<>();
+    HashMap<Object, ThijsFreqMod> opponents = new HashMap<>();
     HashMap<Object, ArrayList<Bid>> accepts = new HashMap<>();
     Bid lastBid = null;
     double n = 0.1;
@@ -180,7 +180,7 @@ public class USBDROOG extends AbstractNegotiationParty {
     	Bid ret=null;
     	for(Bid option: allbids){
     		double nashv=getUtility(option);
-    	    for (Entry<Object,BetterFOM> entry : opponents.entrySet()) {
+    	    for (Entry<Object,ThijsFreqMod> entry : opponents.entrySet()) {
     	    	nashv=nashv*entry.getValue().estimateUtility(option);
     	    }
     	    if(nashv>nash){
@@ -283,7 +283,7 @@ public Bid generateForNash(){
     }
 
     boolean accaptable(Bid offer) {
-        Set<Map.Entry<Object, BetterFOM>> models = opponents.entrySet();
+        Set<Map.Entry<Object, ThijsFreqMod>> models = opponents.entrySet();
         for (Map.Entry e : models) {
             double fractionRemaining = timeline.getTime();
             double offset=1;
@@ -308,7 +308,7 @@ public Bid generateForNash(){
     }
 
     boolean accaptable(double minimal, Bid offer) {
-        Set<Map.Entry<Object, BetterFOM>> models = opponents.entrySet();
+        Set<Map.Entry<Object, ThijsFreqMod>> models = opponents.entrySet();
         for (Map.Entry e : models) {
             if (((FrequencyOpponentModel) e.getValue()).estimateUtility(offer) < minimal) {
                 return false;
@@ -331,8 +331,8 @@ public Bid generateForNash(){
     		return allbids.get(0);
     	}
     	
-    	//return generateForNash();
-        for (int i = 0; i < allbids.size(); i++) {
+    	return generateForNash();
+        /*for (int i = 0; i < allbids.size(); i++) {
             if (accaptable(allbids.get(i))) {
                 return allbids.get(i);
             }
@@ -351,11 +351,14 @@ public Bid generateForNash(){
         }
 
         if (!opponents.containsKey(sender)) {
-            opponents.put(sender, new BetterFOM(getUtilitySpace().getDomain(), n));
+            opponents.put(sender, new ThijsFreqMod(getUtilitySpace().getDomain(), n));
             accepts.put(sender, new ArrayList<Bid>());
         }
 
         if (action instanceof Offer) {
+            if (lastBid != null) {
+                opponents.get(sender).BidRejected(lastBid);
+            }
             lastBid = ((Offer) action).getBid();
             FrequencyOpponentModel OM = opponents.get(sender);
             try {

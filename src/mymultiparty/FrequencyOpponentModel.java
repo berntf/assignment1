@@ -22,13 +22,13 @@ public class FrequencyOpponentModel {
     private double n;
 
     //valueFreq contains (per issue) the frequencies of all values
-    private ArrayList<IssueModel> issueModels;
+    protected ArrayList<IssueModel> issueModels;
     //weights contains the estimated weights
-    private ArrayList<Double> weights;
+    protected ArrayList<Double> weights;
     //issueNumbers contains the issue number for each issue
-    private ArrayList<Integer> issueNumbers;
+    protected ArrayList<Integer> issueNumbers;
 
-    private Bid previousBid = null;
+    protected Bid previousBid = null;
 
     /**
      * Constructs a model for a single opponent. Domain can only contain
