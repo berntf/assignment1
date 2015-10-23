@@ -270,12 +270,7 @@ public Bid generateForNash(){
     rounds++;
     	try {            
             Bid newBid = generateBid();
-<<<<<<< HEAD
             if(Util.shouldPanic(getTimeLine(), rounds)){
-=======
-            double fractionRemaining = timeline.getTime();
-            if(Util.estimatedRoundsLeft(getTimeLine(), rounds) <= 2){
->>>>>>> 34e2e6207ba19191256fca0d9a27b51576d0dcc1
             	return new Accept();
             }
             if (getUtility(newBid) > getUtility(lastBid)) {
