@@ -1,5 +1,6 @@
 package mymultiparty;
 
+import Group13.BetterFOM;
 import java.util.LinkedList;
 
 import negotiator.Bid;

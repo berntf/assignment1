@@ -1,8 +1,7 @@
-package mymultiparty;
+package Group13;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import negotiator.issue.Issue;
 import negotiator.issue.IssueDiscrete;
 import negotiator.issue.IssueInteger;
@@ -12,6 +11,11 @@ import negotiator.session.TimeLineInfo;
 import negotiator.session.Timeline;
 
 public class Util {
+    /**
+     * 
+     * @param issue (Discrete or Integer only)
+     * @return An arraylist containing all possible values for issue
+     */
     public static ArrayList<Value> getValues(Issue issue) {
         ArrayList<Value> ret = new ArrayList();
         
@@ -36,12 +40,12 @@ public class Util {
         return ret;
     }
     
-    public static boolean shouldPanic(TimeLineInfo time, int rounds) {
+    public static double estimatedRoundsLeft(TimeLineInfo time, int currentRound) {
         if (time.getType() == Timeline.Type.Rounds) {
-            return (time.getTotalTime() - rounds) <= 1;
+            return time.getTotalTime() - currentRound;
         } else {
-            return (time.getTotalTime() - time.getCurrentTime()) <= 1.5*time.getCurrentTime()/rounds;
-        }
+            return (time.getTotalTime() - time.getCurrentTime())/ (time.getCurrentTime()/currentRound);
+        }        
     }
     
     public static <T extends Number> double getSum(Collection<T> c) {

@@ -1,8 +1,7 @@
-package mymultiparty;
+package Group13;
 
 import java.util.HashMap;
 import negotiator.issue.IssueDiscrete;
-import negotiator.issue.Value;
 import negotiator.issue.ValueDiscrete;
 
 public class DiscreteIssueModel implements IssueModel<ValueDiscrete> {
