@@ -49,7 +49,7 @@ public class USBNAT extends AbstractNegotiationParty {
     public void init(UtilitySpace utilSpace, Deadline dl, TimeLineInfo tl, long randomSeed, AgentID agentId) {
         super.init(utilSpace, dl, tl, randomSeed, agentId);
 
-        absoluteMinimum = Math.max(0.2, utilitySpace.getReservationValueUndiscounted());
+        absoluteMinimum = Math.max(0.05, utilitySpace.getReservationValueUndiscounted());
 
         allBids = generateAllBids();
     }
@@ -258,8 +258,8 @@ public class USBNAT extends AbstractNegotiationParty {
         Bid max = findMaxAccepted();
         Bid nash = getNash();
 
-        if (nash != null && (max == null || getUtility(nash) >= getUtility(max))) {
-            return nash;
+        if (max == null || getUtility(nash) >= getUtility(max)) {
+            max = nash;
         }
 
         return max;
@@ -329,16 +329,16 @@ public class USBNAT extends AbstractNegotiationParty {
         try {
             rounds++;
 
-            //Panic Mode
+            //Panic Mode (try to ignore very long first rounds by checking if we are already after start)
             double roundsLeft = Util.estimatedRoundsLeft(getTimeLine(), rounds);
             if (getTimeLine().getTime() >= start && roundsLeft <= panic) {
-                if (roundsLeft <= 2) {
+                if (roundsLeft <= 2 && getUtility(lastBid) > absoluteMinimum) {
                     return new Accept();
                 } else {
-                    Bid b = findPanicBid();
-                    if (b == null || getUtility(b) <= getUtility(lastBid)) {
+                    Bid b = findPanicBid();                    
+                    if (getUtility(b) <= getUtility(lastBid) && getUtility(lastBid) > absoluteMinimum) {
                         return new Accept();
-                    } else {
+                    } else if(getUtility(b) > absoluteMinimum){
                         return new Offer(b);
                     }
                 }
