@@ -1,4 +1,4 @@
-package mymultiparty;
+package Group13;
 
 import negotiator.issue.IssueInteger;
 import negotiator.issue.ValueInteger;

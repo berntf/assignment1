@@ -1,10 +1,6 @@
-package mymultiparty;
+package Group13;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import negotiator.Bid;
 import negotiator.Domain;
@@ -12,7 +8,6 @@ import negotiator.issue.Issue;
 import negotiator.issue.IssueDiscrete;
 import negotiator.issue.IssueInteger;
 import negotiator.issue.Value;
-import negotiator.issue.ValueInteger;
 
 /**
  * Models an opponent using the frequency model

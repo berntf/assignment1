@@ -1,5 +1,6 @@
 package mymultiparty;
 
+import Group13.FrequencyOpponentModel;
 import java.util.HashMap;
 import java.util.List;
 import negotiator.actions.Accept;

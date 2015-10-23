@@ -1,8 +1,7 @@
-package mymultiparty;
+package Group13;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import negotiator.issue.Issue;
 import negotiator.issue.IssueDiscrete;
 import negotiator.issue.IssueInteger;
@@ -12,6 +11,11 @@ import negotiator.session.TimeLineInfo;
 import negotiator.session.Timeline;
 
 public class Util {
+    /**
+     * 
+     * @param issue (Discrete or Integer only)
+     * @return An arraylist containing all possible values for issue
+     */
     public static ArrayList<Value> getValues(Issue issue) {
         ArrayList<Value> ret = new ArrayList();
         

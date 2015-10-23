@@ -1,5 +1,7 @@
 package mymultiparty;
 
+import Group13.Util;
+import Group13.FrequencyOpponentModel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
