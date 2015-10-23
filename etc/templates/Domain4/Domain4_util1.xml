@@ -42,16 +42,16 @@
 <item index="4" value="d4" evaluation="4"> 
 </item> 
 </issue> 
-<weight index="1" value="0.41051514203415784"> 
+<weight index="1" value="0.41056727535885756"> 
 </weight> 
-<weight index="2" value="0.08512093662498495"> 
+<weight index="2" value="0.08510845803825565"> 
 </weight> 
-<weight index="3" value="0.41333428787463083"> 
+<weight index="3" value="0.41330286401836824"> 
 </weight> 
-<weight index="4" value="0.09102963346622636"> 
+<weight index="4" value="0.09102140258451862"> 
 </weight> 
 </objective> 
-<discount_factor value="0.5"> 
+<discount_factor value="1.0"> 
 </discount_factor> 
 <reservation value="0.0"> 
 </reservation> 

@@ -268,7 +268,6 @@ public Bid generateForNash(){
     rounds++;
     	try {            
             Bid newBid = generateBid();
-            double fractionRemaining = timeline.getTime();
             if(Util.shouldPanic(getTimeLine(), rounds)){
             	return new Accept();
             }
@@ -320,9 +319,7 @@ public Bid generateForNash(){
         }
         return true;
     }
-    int bidnum=0;
     public Bid generateBid() {
-    	bidnum++;
         double fractionRemaining = timeline.getTime();
 
     	if (allbids == null) {
@@ -332,7 +329,7 @@ public Bid generateForNash(){
         	return getNash();
         }
     	if(fractionRemaining<0.1){
-    		return allbids.get(0);
+    		return allbids.get((int) ((Math.random()*Math.random()*(allbids.size())/20)));
     	}
     	
     	return generateForNash();
