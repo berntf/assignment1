@@ -16,7 +16,7 @@ public class FrequencyOpponentModel {
 
     private double n;
 
-    //valueFreq contains (per issue) the frequencies of all values
+    //issueModels contains (per issue) the model for that specific issue.
     protected ArrayList<IssueModel> issueModels;
     //weights contains the estimated weights
     protected ArrayList<Double> weights;
